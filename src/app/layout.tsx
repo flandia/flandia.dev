@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Chiron_Hei_HK, LXGW_WenKai_TC } from "next/font/google";
 
 import "./globals.css";
 import React from "react";
@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={cn(inter.className)}>
+    <html lang="zh" className={cn(inter.className)}>
       <body>{children}</body>
     </html>
   );

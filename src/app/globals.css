@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Chiron+Hei+HK:ital,wght@0,200..900;1,200..900&family=LXGW+WenKai+TC:wght@300;400;700&display=swap');
 @import 'tailwindcss';
 
 @config '../../tailwind.config.js';
@@ -167,4 +168,73 @@ caption {
 th,
 td {
   @apply px-2 py-1 text-left;
+}
+
+.chiron-hei-hk-400 {
+
+}
+
+.lxgw-wenkai-tc-light {
+  font-family: "LXGW WenKai TC", cursive;
+  font-weight: 300;
+  font-style: normal;
+  font-feature-settings: "halt";
+}
+
+.lxgw-wenkai-tc-regular {
+  font-family: "LXGW WenKai TC", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-feature-settings: "halt";
+}
+
+.lxgw-wenkai-tc-bold {
+  font-family: "LXGW WenKai TC", cursive;
+  font-weight: 700;
+  font-feature-settings: "halt";
+  font-style: normal;
+}
+
+
+/* Setup CJK Fonts */
+body {
+  font-family: "Flandia Font", sans-serif;
+}
+*:lang(zh) .font-mono {
+  font-family: "Flandia Font", monospace;
+}
+
+@font-face {
+  font-family: "Flandia Font";
+  src: url("/NotoSansTC-VariableFont_wght.ttf") format("truetype");
+  font-style: normal; /* normal */
+}
+
+@font-face {
+  font-family: "Flandia Font";
+  src: url("/LXGWWenKaiTC-Regular.ttf") format("truetype");
+  font-weight: 400; /* regular */
+  font-style: italic;
+  /*unicode-range: U+FF01-FF5E, U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+2CEB0-2EBEF, U+30000-3134F, U+31350-323AF, U+F900-FAFF, U+2F800-2FA1F;*/
+}
+@font-face {
+  font-family: "Flandia Font";
+  src: url("/LXGWWenKaiTC-Medium.ttf") format("truetype");
+  font-weight: 500; /* medium */
+  font-style: italic;
+  /*unicode-range: U+FF01-FF5E, U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+2CEB0-2EBEF, U+30000-3134F, U+31350-323AF, U+F900-FAFF, U+2F800-2FA1F;*/
+}
+@font-face {
+  font-family: "Flandia Font";
+  src: url("/LXGWWenKaiTC-Light.ttf") format("truetype");
+  font-weight: 300; /* light */
+  font-style: italic;
+  /*unicode-range: U+FF01-FF5E, U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+2CEB0-2EBEF, U+30000-3134F, U+31350-323AF, U+F900-FAFF, U+2F800-2FA1F;*/
+}
+
+/* fallback */
+@font-face {
+  font-family: "Flandia Font";
+  src: url("/NotoSansTC-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
 }
