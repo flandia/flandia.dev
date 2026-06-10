@@ -335,6 +335,17 @@ const Body = () => (
     <Section>
       <SectionTitle>Research Experiences</SectionTitle>
       <Entry>
+        <EntryTitle>Final Year Thesis</EntryTitle>
+        <EntrySubtitle>Type System Design and Implementation</EntrySubtitle>
+        <EntryTime>2025-26 Summer</EntryTime>
+        <EntryBadges>
+          <LightBadge>Ongoing</LightBadge>
+        </EntryBadges>
+        <EntryDescription>{md`
+          Supervised by [Prof. Lionel Parreaux](https://lptk.github.io/about.html). Developing novel type system ideas, implementing them in a prototype, and formalizing them to mathematically prove important correctness properties. Potential directions include dependent types, higher-order subtyping, substructural type systems (à la Rust), effect systems, SMT solver integration, and type inference.
+        `}</EntryDescription>
+      </Entry>
+      <Entry>
         <EntryTitle>Research Internship</EntryTitle>
         <EntrySubtitle>Opal Extension</EntrySubtitle>
         <EntryTime>2025-26 Spring</EntryTime>
