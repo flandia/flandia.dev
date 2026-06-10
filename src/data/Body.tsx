@@ -578,6 +578,26 @@ const Body = () => (
           </ProjectBadges>
           <ProjectLabel>github.com/HKUST-CRS/crs</ProjectLabel>
         </Project>
+        <Project href="https://github.com/FlandiaYingman/from-do">
+          <ProjectTitle>From Do</ProjectTitle>
+          <ProjectDescription>
+            An experimental, interactive domain-specific language that behaves
+            as a to-do app. The compiler features a hand-written two-stage
+            lexer, recursive-descent parser, relative-date/time evaluator, and a
+            pretty-printer. It is shipped as a VS Code extension.
+          </ProjectDescription>
+          <ProjectBadges>
+            <LightBadge>Rust</LightBadge>
+            <LightBadge>DSL</LightBadge>
+            <LightBadge>jiff</LightBadge>
+            <LightBadge>tokio</LightBadge>
+            <LightBadge>clap</LightBadge>
+            <LightBadge>notify</LightBadge>
+            <LightBadge>WASM</LightBadge>
+            <LightBadge>VS Code</LightBadge>
+          </ProjectBadges>
+          <ProjectLabel>github.com/FlandiaYingman/from-do</ProjectLabel>
+        </Project>
       </ProjectCards>
     </Section>
     <Section hiddenPrint>
