@@ -470,6 +470,7 @@ const Body = () => (
             <DarkBadge>Kotlin</DarkBadge>
             <DarkBadge>Scala</DarkBadge>
             <DarkBadge>Haskell</DarkBadge>
+            <DarkBadge>Rust</DarkBadge>
             <DarkBadge>MLscript</DarkBadge>
             <DarkBadge>Golang</DarkBadge>
             <DarkBadge>C/C++</DarkBadge>
@@ -487,14 +488,17 @@ const Body = () => (
           <Badges>
             <DarkBadge>Bun</DarkBadge>
             <DarkBadge>React</DarkBadge>
-            <DarkBadge>NumPy</DarkBadge>
-            <DarkBadge>PostgreSQL</DarkBadge>
             <DarkBadge>React Native</DarkBadge>
+            <DarkBadge>NumPy</DarkBadge>
+            <DarkBadge>Polars</DarkBadge>
+            <DarkBadge>DuckDB</DarkBadge>
+            <DarkBadge>PostgreSQL</DarkBadge>
+            <DarkBadge>MongoDB</DarkBadge>
             <DarkBadge>Zod</DarkBadge>
             <DarkBadge>tRPC</DarkBadge>
             <DarkBadge>OpenAPI</DarkBadge>
             <DarkBadge>Fastify</DarkBadge>
-            <DarkBadge>MongoDB</DarkBadge>
+            <DarkBadge>OR-Tools</DarkBadge>
           </Badges>
         </EntryDescription>
       </Entry>
