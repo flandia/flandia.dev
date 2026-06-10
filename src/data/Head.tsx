@@ -94,9 +94,9 @@ const Head = () => (
       <div className="flex flex-1 flex-col gap-2">
         <About>
           <TheAvatar className="float-end sm:hidden" />
-          Enthusiastic learner and developer, passionate about learning new
-          theories, practices and methodologies through intuition and hands-on
-          experiences.
+          Enthusiastic developer, learner, and researcher, passionate about
+          learning new theories, practices and methodologies through intuition
+          and hands-on experiences.
         </About>
         <Location href="https://maps.app.goo.gl/YZuY7rM4Mf9mvP9i8">
           HKUST, Hong Kong SAR
