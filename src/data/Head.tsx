@@ -81,7 +81,7 @@ const Socials = ({ children }: PropsWithChildren) => (
 const Head = () => (
   <div className="flex flex-col gap-2">
     <Name>
-      (Yu Hong) Harry Li <span className="font-normal">|</span>{" "}
+      Harry Y. H. Li <span className="font-normal">|</span>{" "}
       <ruby>
         李<rt>Li</rt>
       </ruby>
