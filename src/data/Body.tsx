@@ -453,6 +453,14 @@ const Body = () => (
     <Section>
       <SectionTitle>Other Experiences</SectionTitle>
       <Entry>
+        <EntryTitle>Artifact Evaluation Committee</EntryTitle>
+        <EntrySubtitle>ICFP 2026, Indianapolis, IN, USA</EntrySubtitle>
+        <EntryTime>2026</EntryTime>
+        <EntryDescription>{md`
+          Serving on the [ICFP 2026 Artifact Evaluation Committee](https://icfp26.sigplan.org/committee/icfp-2026-artifact-evaluation-organization-committee) (co-chaired by [Son Ho](https://icfp26.sigplan.org/profile/sonho) and [Prof. Lionel Parreaux](https://lptk.github.io/about.html)), reviewing artifacts submitted to the International Conference on Functional Programming.
+        `}</EntryDescription>
+      </Entry>
+      <Entry>
         <EntryTitle>UG Student Representative</EntryTitle>
         <EntrySubtitle>
           32nd Meeting, Student-Staff Liaison Committee, CSE, HKUST
