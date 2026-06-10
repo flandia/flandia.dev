@@ -337,9 +337,16 @@ const Body = () => (
       <Entry>
         <EntryTitle>Research Internship</EntryTitle>
         <EntrySubtitle>Opal Extension</EntrySubtitle>
-        <EntryTime>2025-26 Spring (ongoing)</EntryTime>
+        <EntryTime>2025-26 Spring</EntryTime>
+        <EntryBadges>
+          <LightBadge>Ongoing</LightBadge>
+        </EntryBadges>
         <EntryDescription>{md`
-          This program is advised by [Prof. Osbert Bastani](https://obastani.github.io/) and [Stephen Mell](https://mell.ac/). I am mainly working on extensions on the paper [Opportunistically Parallel Lambda Calculus](https://arxiv.org/pdf/2405.11361.pdf), nicknamed Opal.
+          This program is advised by [Prof. Osbert Bastani](https://obastani.github.io/) and [Dr. Stephen Mell](https://mell.ac/). I am working on extensions to [Opportunistically Parallel Lambda Calculus](https://arxiv.org/pdf/2405.11361.pdf) (Opal), a calculus for opportunistic parallelism.
+
+          I am extending Opal with control-flow constructs (early-\`return\`, \`break\`, and \`continue\`) by formalizing their syntax and semantics in the Bezoar intermediate language and designing a source-to-source compilation from "Bezoar with control-flow" to core Bezoar.
+
+          We are also investigating how to preserve opportunistic parallelism, potentially by leveraging partial redundancy elimination and control-flow analysis.
         `}</EntryDescription>
       </Entry>
       <Entry>
