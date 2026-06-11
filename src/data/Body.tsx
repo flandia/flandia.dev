@@ -247,7 +247,7 @@ const Body = () => (
         </EntrySubtitle>
         <EntryTime>2025-26 Summer</EntryTime>
         <EntryDetails>{md`
-          Attended the [Oregon Programming Languages Summer School (OPLSS)](https://www.cs.uoregon.edu/research/summerschool/summer26/), a two-week intensive program on programming language theory. The topic is _Types, Proofs, and Program Logics_.
+          Attended the [Oregon Programming Languages Summer School (OPLSS)](https://www.cs.uoregon.edu/research/summerschool/summer26/), a two-week intensive program on programming language theory. The topic was _Types, Proofs, and Program Logics_.
         `}</EntryDetails>
       </Entry>
     </Section>
