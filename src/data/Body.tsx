@@ -31,7 +31,7 @@ const Body = () => (
     <Section>
       <SectionTitle>About</SectionTitle>
       <SectionText>{md`
-        I am highly interested in various fields in computer science, particularly in theoretical computer science (theory B). I am methodically experienced in developing and maintaining client/server apps and websites. I am also experienced in and currently exploring more about data mining, manipulation and visualization.
+        I'm an enthusiastic student interested in various fields in computer science. My research interests primarily focus on theoretical computer science (theory B) and particularly in _programming languages_. I am methodically experienced in (fullstack) software engineering. I am also experienced in and currently exploring more about data mining, analysis, and visualization.
       `}</SectionText>
     </Section>
     <Section>
