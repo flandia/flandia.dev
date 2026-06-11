@@ -243,12 +243,11 @@ const Body = () => (
       <Entry>
         <EntryTitle>University of Oregon</EntryTitle>
         <EntrySubtitle>
-          Oregon Programming Languages Summer School: Types, Proofs, and Program
-          Logics
+          Oregon Programming Languages Summer School
         </EntrySubtitle>
-        <EntryTime>2026</EntryTime>
+        <EntryTime>2025-26 Summer</EntryTime>
         <EntryDetails>{md`
-          Attended the [Oregon Programming Languages Summer School (OPLSS)](https://www.cs.uoregon.edu/research/summerschool/summer26/), a two-week intensive program on programming language theory. Lectures covered type theory, separation logic, Rocq, session types, program semantics, auto-active verification, modal logic, linearity and Rust verification, and dependently typed concurrent separation logic (Pulse).
+          Attended the [Oregon Programming Languages Summer School (OPLSS)](https://www.cs.uoregon.edu/research/summerschool/summer26/), a two-week intensive program on programming language theory. The topic is _Types, Proofs, and Program Logics_.
         `}</EntryDetails>
       </Entry>
     </Section>
