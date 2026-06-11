@@ -489,7 +489,7 @@ const Body = () => (
           <LightBadge>Upcoming</LightBadge>
         </EntryBadges>
         <EntryDescription>{md`
-          Lead by [Prof. Cindy Li](https://cse.hkust.edu.hk/~lixin/) to join a team leading the AI Literacy Initiative targeting Year 1 students. I will lead two workshops in my areas of expertise and support several others, covering fun and practical AI topics for students' study and daily life.
+          Led by [Prof. Cindy Li](https://cse.hkust.edu.hk/~lixin/) to join a team leading the AI Literacy Initiative targeting Year 1 students. I will lead two workshops in my areas of expertise and support several others, covering fun and practical AI topics for students' study and daily life.
         `}</EntryDescription>
       </Entry>
       <Entry>
