@@ -42,7 +42,7 @@ export function SectionTitle(props: PropsWithChildren<{}>) {
 export function SectionText(props: PropsWithChildren<{}>) {
   const { children, ...rest } = props;
   return (
-    <div className="font-mono text-sm text-pretty" {...rest}>
+    <div className="font-mono text-sm text-pretty space-y-2" {...rest}>
       <RichContent>{children}</RichContent>
     </div>
   );

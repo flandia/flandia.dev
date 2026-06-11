@@ -31,8 +31,20 @@ const Body = () => (
     <Section>
       <SectionTitle>About</SectionTitle>
       <SectionText>{md`
-        I am highly interested in various fields in computer science, particularly in theoretical computer science (theory B). I am methodically experienced in developing and maintaining client/server apps and websites. I am also experienced in and currently exploring more about data mining, manipulation and visualization.
+        I am interested in theoretical computer science, programming languages, compiler systems, and software engineering. My experience includes academic programming-language research, compiler implementation, web application development, data processing, and visualization.
       `}</SectionText>
+    </Section>
+    <Section>
+      <SectionTitle>Academic Profile</SectionTitle>
+      <SectionText>
+        {md`
+          II am a full-time undergraduate student in B.Eng. Computer Science at HKUST, expected to graduate in May 2027. I will participate in a summer research internship at the University of Pennsylvania from June 15, 2026 to August 21, 2026, continuing my work on the Opal extension project (see Research Experiences below).
+
+          My current research interests include programming language theory and compiler systems, focusing on academic work on the Opal compiler/language framework.
+
+          **Publications**: none to date. **Patents**: none to date.
+        `}
+      </SectionText>
     </Section>
     <Section>
       <SectionTitle>Education</SectionTitle>
@@ -44,8 +56,6 @@ const Body = () => (
         <EntryTime>2023 - 2027</EntryTime>
         <EntryDetails>
           {md`
-            (As of March 13, 2026)
-
             Cumulative Grade Average (CGA): 4.211/4.3
             Major Cumulative Grade Average (MCGA): 4.216/4.3
             Class Rank: 1/170
@@ -183,8 +193,6 @@ const Body = () => (
         <EntryDetails>
           {md`
             Nominated by HKUST School of Engineering to participate in an exchange program at UPenn in 2025-26 Spring.
-
-            (As of May 13, 2026)
 
             GPA: 4.00/4.00
           `}
@@ -337,9 +345,9 @@ const Body = () => (
       <Entry>
         <EntryTitle>Research Internship</EntryTitle>
         <EntrySubtitle>Opal Extension</EntrySubtitle>
-        <EntryTime>2025-26 Spring (ongoing)</EntryTime>
+        <EntryTime>2025-26 Spring, Summer</EntryTime>
         <EntryDescription>{md`
-          This program is advised by [Prof. Osbert Bastani](https://obastani.github.io/) and [Stephen Mell](https://mell.ac/). I am mainly working on extensions on the paper [Opportunistically Parallel Lambda Calculus](https://arxiv.org/pdf/2405.11361.pdf), nicknamed Opal.
+          This academic research project is advised by [Prof. Osbert Bastani](https://obastani.github.io/) and [Stephen Mell](https://mell.ac/). I work on extensions to [Opal](https://arxiv.org/pdf/2405.11361.pdf), a published programming-language and compiler framework. My work focuses on language semantics, compiler implementation, structured control flow, and related compiler-system features.
         `}</EntryDescription>
       </Entry>
       <Entry>
@@ -366,7 +374,7 @@ const Body = () => (
         </EntrySubtitle>
         <EntryTime>2023-24 Summer</EntryTime>
         <EntryDescription>{md`
-          This program was supervised by [Prof. Yangqiu Song](https://www.cse.ust.hk/~yqsong/) and PhD candidate Zihao Wang. I studied a postgraduate course about graph machine learning, graph neural networks, and knowledge graphs. I participated in a research project about logic reasoning over knowledge graphs, where I gained hands-on experience in the research field.
+          This program was supervised by [Prof. Yangqiu Song](https://www.cse.ust.hk/~yqsong/) and PhD candidate Zihao Wang. I studied academic topics in knowledge graphs, graph-based learning, and logical reasoning. I participated in a research-oriented project on reasoning over structured knowledge representations.
         `}</EntryDescription>
       </Entry>
     </Section>
@@ -380,7 +388,7 @@ const Body = () => (
           This project is supervised by Prof. Desmond Tsoi.
 
           - Developed a web app that allows students in the department to effectively handle course administration matters, such as making class swapping and absence requests, and assignment deadline extension requests.
-          - Designed the backend and frontend architecture with cutting-edge web and software engineering technologies and best practices.
+          - Designed and implemented backend and frontend components using modern web-development practices, with emphasis on maintainability, usability, and reliability.
 
           For more information, please visit the project page at [github.com/HKUST-CRS/crs](https://github.com/HKUST-CRS/crs).
         `}</EntryDescription>
@@ -388,16 +396,16 @@ const Body = () => (
       <Entry>
         <EntryTitle>Independent Work Project</EntryTitle>
         <EntrySubtitle>
-          AI Agents as Dynamic, Adaptive Language Assessors: Building a
-          Patentable App
+          Educational Language-Learning Application with Adaptive Assessment
+          Features
         </EntrySubtitle>
         <EntryTime>2024-25 Spring, 2025-26 Fall</EntryTime>
         <EntryDescription>{md`
           This project is supervised by Prof. Desmond Tsoi, in collaboration with Professor Mei Yi Angel Lin from the Education University of Hong Kong.
 
-          - Developed an innovative app that leverages AI agents to dynamically and adaptively train and assess language skills utilizing large language models' (LLMs) multimodality capabilities.
-          - Designed specifically for English learners from Mainland China and Hong Kong, the app understands Mandarin and Cantonese and actively assists users in translating their native language to English during conversations.
-          - Adopted user-centric educational philosophies to ensure the app effectively meets the learning needs of its target audience (with the help from Professor Mei Yi Angel Lin).
+          - Developed an educational software prototype that uses language-model-based features to support adaptive language practice and assessment.
+          - Designed the prototype for English learners familiar with Mandarin or Cantonese, with features that support bilingual learning and English practice.
+          - Applied user-centered educational design principles to better support the learning needs of the target users.
         `}</EntryDescription>
       </Entry>
       <Entry>
@@ -408,7 +416,7 @@ const Body = () => (
           After I performed outstandingly in computer science courses, instructors invited me to serve as an undergraduate teaching assistant (UGTA). As of 2025-26 Winter, I have served as a UGTA for 8 semesters (including Summer and Winter) throughout 3 courses (COMP 2011 C++ Programming, 2012 Object-Oriented Programming and Data Structures and 1023 Introduction to Python Programming).
 
           - Assisting instructors in preparing course materials, including assignments, tutorial notes, lecture notes and self-tests.
-          - Answering students' questions and providing guidance on lecture materials, assignments, environment set-up, as well as introducing advanced topics to students if they are interested.
+          - Answering students' questions and providing guidance on lecture materials, assignments, environment set-up, as well as introducing additional topics to students if they are interested.
           - Presenting tutorial sessions to help students better understand the course materials and improve their programming skills.
         `}</EntryDescription>
       </Entry>
@@ -420,9 +428,9 @@ const Body = () => (
           <LightBadge>Part Time</LightBadge>
         </EntryBadges>
         <EntryDescription>{md`
-          - Developed an automated software solution utilizing computer vision technology to efficiently process and analyze traffic data.
-          - Integrated the software solution with GIS software to enhance data visualization and spatial analysis capabilities.
-          - Performed data analysis on the processed traffic data to extract meaningful information, insights, and patterns.
+          - Developed an academic software tool for processing and analyzing traffic-related image/video data for urban-mobility research.
+          - Integrated the tool with GIS software to support data visualization and spatial analysis.
+          - Performed data processing and analysis to summarize traffic-related patterns for research and planning purposes.
           - Streamlined workflows to improve the accuracy and speed of traffic data processing.
         `}</EntryDescription>
       </Entry>
@@ -437,9 +445,9 @@ const Body = () => (
         <EntryDescription>{md`
           USThing is a student-developed all-in-one app for HKUST. The team consists of passionate and talented students who work towards continually improving the app and the HKUST student community.
 
-          - Leading the backend team in refactoring the backend server architecture into a containerized microservice architecture, improving performance and maintainability.
+          - Led backend refactoring into a containerized service architecture, improving maintainability, deployment workflow, and performance for a student-developed campus application.
           - Leading the app team in revamping our old apps, migrating them from old native apps for Android and iOS, respectively, into one app built with React Native technology.
-          - Leading the team in refactoring the CI/CD workflow of the development process of both the backend team and the app team, automating, simplifying and improving the efficiency of the integration and deployment/release process.
+          - Improved development and release workflows by simplifying integration, testing, and deployment processes for the student-development team.
         `}</EntryDescription>
       </Entry>
     </Section>
@@ -492,7 +500,7 @@ const Body = () => (
         </EntryDescription>
       </Entry>
       <Entry>
-        <EntryTitle>Misc</EntryTitle>
+        <EntryTitle>Tools & Other Skills</EntryTitle>
         <EntryDescription>
           <Badges>
             <DarkBadge>Git</DarkBadge>
@@ -501,8 +509,7 @@ const Body = () => (
             <DarkBadge>MS Excel</DarkBadge>
             <DarkBadge>LaTeX</DarkBadge>
             <DarkBadge>Typst</DarkBadge>
-            <DarkBadge>ChatGPT</DarkBadge>
-            <DarkBadge>GenAI</DarkBadge>
+            <DarkBadge>AI-assisted productivity tools</DarkBadge>
             <DarkBadge>Video Games</DarkBadge>
             <DarkBadge>Mobile Games</DarkBadge>
             <DarkBadge>Adobe Photoshop</DarkBadge>
