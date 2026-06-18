@@ -311,7 +311,7 @@ const Body = () => (
         <EntrySubtitle>
           Hong Kong University of Science and Technology
         </EntrySubtitle>
-        <EntryTime>2024-25</EntryTime>
+        <EntryTime>2024-25, 2025-26</EntryTime>
       </Entry>
       <Entry>
         <EntryTitle>
