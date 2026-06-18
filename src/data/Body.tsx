@@ -259,6 +259,11 @@ const Body = () => (
         <EntryTime>2025-26</EntryTime>
       </Entry>
       <Entry>
+        <EntryTitle>Reaching Out Award</EntryTitle>
+        <EntrySubtitle>HKSAR Government Scholarship Fund</EntrySubtitle>
+        <EntryTime>2025-26</EntryTime>
+      </Entry>
+      <Entry>
         <EntryTitle>IET Prize 2025</EntryTitle>
         <EntrySubtitle>IET Hong Kong</EntrySubtitle>
         <EntryTime>2025-26</EntryTime>
