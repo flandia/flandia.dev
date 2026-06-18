@@ -323,7 +323,7 @@ const Body = () => (
         <EntryTime>2023-24</EntryTime>
       </Entry>
       <Entry>
-        <EntryTitle>Best UGTA Award-Honorable Mention</EntryTitle>
+        <EntryTitle>Best UGTA Award - Honorable Mention</EntryTitle>
         <EntrySubtitle>
           Department of Computer Science and Engineering, HKUST
         </EntrySubtitle>
