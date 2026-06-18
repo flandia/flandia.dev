@@ -264,6 +264,11 @@ const Body = () => (
         <EntryTime>2025-26</EntryTime>
       </Entry>
       <Entry>
+        <EntryTitle>Dean's List</EntryTitle>
+        <EntrySubtitle>School of Engineering, HKUST</EntrySubtitle>
+        <EntryTime>2025-26 Fall</EntryTime>
+      </Entry>
+      <Entry>
         <EntryTitle>IET Prize 2025</EntryTitle>
         <EntrySubtitle>IET Hong Kong</EntrySubtitle>
         <EntryTime>2025-26</EntryTime>
