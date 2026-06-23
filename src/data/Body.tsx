@@ -637,7 +637,7 @@ const Body = () => (
           </ProjectBadges>
           <ProjectLabel>github.com/HKUST-CRS/crs</ProjectLabel>
         </Project>
-        <Project href="https://github.com/FlandiaYingman/from-do">
+        <Project href="https://github.com/flandia/from-do">
           <ProjectTitle>From Do</ProjectTitle>
           <ProjectDescription>
             An experimental, interactive domain-specific language that behaves
@@ -655,7 +655,7 @@ const Body = () => (
             <LightBadge>WASM</LightBadge>
             <LightBadge>VS Code</LightBadge>
           </ProjectBadges>
-          <ProjectLabel>github.com/FlandiaYingman/from-do</ProjectLabel>
+          <ProjectLabel>github.com/flandia/from-do</ProjectLabel>
         </Project>
       </ProjectCards>
     </Section>

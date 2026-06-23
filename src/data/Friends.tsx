@@ -114,7 +114,7 @@ export const Friends: FC = () => {
         <Friend {...f} key={f.href} />
       ))}
       <Friend
-        href="https://github.com/FlandiaYingman/flandia.dev/pulls"
+        href="https://github.com/flandia/flandia.dev/pulls"
         name="Friends..."
         desc={md`
           Create a PR on this section for friendship!

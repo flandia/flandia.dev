@@ -108,9 +108,9 @@ const Head = () => (
             label="me@flandia.dev"
           />
           <Social
-            url="https://github.com/FlandiaYingman"
+            url="https://github.com/flandia"
             icon={SiGithub}
-            label="@FlandiaYingman"
+            label="@flandia"
             labelPrefix="GitHub: "
           />
           <Social

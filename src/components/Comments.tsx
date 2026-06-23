@@ -6,7 +6,7 @@ export function Comments() {
   return (
     <div className="print:hidden">
       <Giscus
-        repo="FlandiaYingman/flandia.dev"
+        repo="flandia/flandia.dev"
         repoId="R_kgDOK_J-pA"
         category="Giscus"
         categoryId="DIC_kwDOK_J-pM4CpUQr"
