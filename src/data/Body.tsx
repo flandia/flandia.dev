@@ -240,16 +240,6 @@ const Body = () => (
           </SubEntry>
         </EntryDetails>
       </Entry>
-      <Entry>
-        <EntryTitle>University of Oregon</EntryTitle>
-        <EntrySubtitle>
-          Oregon Programming Languages Summer School
-        </EntrySubtitle>
-        <EntryTime>2025-26 Summer</EntryTime>
-        <EntryDetails>{md`
-          Attended the [Oregon Programming Languages Summer School (OPLSS)](https://www.cs.uoregon.edu/research/summerschool/summer26/), a two-week intensive program on programming language theory. The topic was _Types, Proofs, and Program Logics_.
-        `}</EntryDetails>
-      </Entry>
     </Section>
     <Section>
       <SectionTitle>Awards & Achievements</SectionTitle>
@@ -505,6 +495,16 @@ const Body = () => (
         </EntryBadges>
         <EntryDescription>{md`
           Led by [Prof. Cindy Li](https://cse.hkust.edu.hk/~lixin/) to join a team leading the AI Literacy Initiative targeting Year 1 students. I will lead two workshops in my areas of expertise and support several others, covering fun and practical AI topics for students' study and daily life.
+        `}</EntryDescription>
+      </Entry>
+      <Entry>
+        <EntryTitle>University of Oregon</EntryTitle>
+        <EntrySubtitle>
+          Oregon Programming Languages Summer School
+        </EntrySubtitle>
+        <EntryTime>2025-26 Summer</EntryTime>
+        <EntryDescription>{md`
+          Attended the [Oregon Programming Languages Summer School (OPLSS)](https://www.cs.uoregon.edu/research/summerschool/summer26/), a two-week intensive program on programming language theory. The topic was _Types, Proofs, and Program Logics_.
         `}</EntryDescription>
       </Entry>
       <Entry>
