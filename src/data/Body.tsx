@@ -331,21 +331,6 @@ const Body = () => (
         </EntrySubtitle>
         <EntryTime>2023</EntryTime>
       </Entry>
-      <Entry>
-        <EntryTitle>First Prize Scholarship</EntryTitle>
-        <EntrySubtitle>Shenzhen Fujing Foreign Language School</EntrySubtitle>
-        <EntryTime>2023</EntryTime>
-      </Entry>
-      <Entry>
-        <EntryTitle>&quot;Fujing Star&quot; Award</EntryTitle>
-        <EntrySubtitle>Shenzhen Fujing Foreign Language School</EntrySubtitle>
-        <EntryTime>2023</EntryTime>
-      </Entry>
-      <Entry>
-        <EntryTitle>Outstanding Student Award</EntryTitle>
-        <EntrySubtitle>Shenzhen Fujing Foreign Language School</EntrySubtitle>
-        <EntryTime>2022</EntryTime>
-      </Entry>
     </Section>
     <Section>
       <SectionTitle>Research Experiences</SectionTitle>
