@@ -1,6 +1,4 @@
-"use client";
 import { shuffle } from "es-toolkit";
-import { FC, startTransition, useEffect, useState } from "react";
 
 import { Friend, FriendProps } from "@/components/Friend";
 import { md } from "@/components/ui/rich-content";
@@ -98,15 +96,8 @@ const FriendList: FriendProps[] = [
   },
 ];
 
-export const Friends: FC = () => {
-  const [friends, setFriends] = useState<typeof FriendList>(FriendList);
-
-  useEffect(() => {
-    // Shuffle after hydration so the static HTML stays deterministic.
-    startTransition(() => {
-      setFriends(shuffle(FriendList));
-    });
-  }, []);
+export function Friends() {
+  const friends = shuffle(FriendList);
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 print:hidden">
@@ -125,4 +116,4 @@ export const Friends: FC = () => {
       />
     </div>
   );
-};
+}

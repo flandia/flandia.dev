@@ -6,7 +6,6 @@ import {
 import { GlobeIcon, MailIcon } from "lucide-react";
 import { createElement, FC, PropsWithChildren } from "react";
 
-import { Button } from "@/components/ui/button";
 import TheAvatar from "@/data/TheAvatar";
 
 const Name = ({ children }: PropsWithChildren) => (
@@ -53,18 +52,17 @@ const Social = (props: SocialProps) => {
 
   return (
     <>
-      <Button
-        className="h-8 w-8 print:hidden"
-        variant="outline"
-        size="icon"
-        asChild
+      <a
+        href={url}
+        rel="noreferrer"
+        target="_blank"
+        aria-label={props.label}
+        className="inline-flex size-8 items-center justify-center rounded-md border border-input bg-background text-sm font-medium whitespace-nowrap ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-hidden print:hidden"
       >
-        <a href={url} rel="noreferrer" target="_blank" aria-label={props.label}>
-          <span aria-hidden="true">
-            {createElement(icon, { className: "h-4 w-4" })}
-          </span>
-        </a>
-      </Button>
+        <span aria-hidden="true">
+          {createElement(icon, { className: "h-4 w-4" })}
+        </span>
+      </a>
       {props.printHidden || (
         <span className="hidden basis-full print:block">
           {props.labelPrefix}
@@ -96,7 +94,7 @@ const Head = () => (
     <div className="flex">
       <div className="flex flex-1 flex-col gap-2">
         <About>
-          <TheAvatar className="float-end sm:hidden" />
+          <TheAvatar className="float-end sm:hidden print:hidden" />
           Enthusiastic developer, learner, and researcher, passionate about
           learning new theories, practices and methodologies through intuition
           and hands-on experiences.
@@ -130,7 +128,7 @@ const Head = () => (
           />
         </Socials>
       </div>
-      <TheAvatar className="hidden sm:block" />
+      <TheAvatar className="hidden sm:block print:ml-auto print:block" />
     </div>
   </div>
 );

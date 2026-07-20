@@ -18,10 +18,10 @@ const statusLabel: Record<Status, string> = {
   wip: "WIP",
 };
 
-export const ProjectTitle = createSlot("span");
-export const ProjectDescription = createSlot("span");
-export const ProjectBadges = createSlot("div");
-export const ProjectLabel = createSlot("span");
+export const ProjectTitle = createSlot();
+export const ProjectDescription = createSlot();
+export const ProjectBadges = createSlot();
+export const ProjectLabel = createSlot();
 
 interface Props {
   status?: Status;

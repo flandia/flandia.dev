@@ -43,7 +43,7 @@ export const createHost = (
   });
 };
 
-export const createSlot = (_element?: string) => {
+export const createSlot = () => {
   const slotId = Symbol("slot");
 
   const Slot = (() => null) as unknown as SlotComponent;

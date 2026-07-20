@@ -134,6 +134,10 @@
     margin: 0 auto !important;
     padding: 0 !important;
   }
+
+  .entry-details:not([open]) > .entry-details-content {
+    display: block !important;
+  }
 }
 
 @media only screen and (hover: none) and (pointer: coarse) {
