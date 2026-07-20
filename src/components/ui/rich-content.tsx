@@ -122,7 +122,7 @@ const renderMarkdown = (markdown: string, key?: string) => {
             {...props}
             target="_blank"
             rel="noreferrer"
-            className="underline underline-offset-2"
+            className="wrap-break-word underline underline-offset-2"
           >
             {children}
           </a>
@@ -137,7 +137,7 @@ const renderMarkdown = (markdown: string, key?: string) => {
           <ol {...props} className="ml-4 list-decimal space-y-1" />
         ),
         p: ({ node: _node, ...props }) => (
-          <p {...props} className="leading-relaxed" />
+          <p {...props} className="leading-relaxed text-pretty" />
         ),
         ul: ({ node: _node, ...props }) => (
           <ul {...props} className="ml-4 list-disc space-y-1" />

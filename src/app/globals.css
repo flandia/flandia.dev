@@ -96,7 +96,19 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply min-h-screen bg-background text-foreground antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-3 outline-ring;
+  }
+
+  ::selection {
+    @apply bg-foreground text-background;
   }
 }
 
@@ -174,5 +186,20 @@ td {
 }
 
 a {
-  @apply underline;
+  @apply touch-manipulation underline decoration-foreground/45 underline-offset-2 transition-[color,text-decoration-color] hover:decoration-foreground;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply scroll-mt-6 text-balance;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

@@ -33,7 +33,10 @@ export function Section({
 export function SectionTitle(props: PropsWithChildren<{}>) {
   const { children, ...rest } = props;
   return (
-    <h2 className="break-after-avoid text-xl font-bold" {...rest}>
+    <h2
+      className="break-after-avoid text-xl font-bold tracking-tight"
+      {...rest}
+    >
       {children}
     </h2>
   );

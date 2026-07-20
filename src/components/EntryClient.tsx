@@ -1,5 +1,6 @@
 "use client";
 
+import { ChevronDownIcon } from "lucide-react";
 import { PropsWithChildren, useCallback, useState } from "react";
 
 import { Badges } from "@/components/ui/badge";
@@ -49,10 +50,10 @@ export const EntryClient = ({
 
   const headerContent = (isInteractive: boolean) => (
     <>
-      <div className="flex items-center justify-between gap-x-2 text-base">
+      <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-x-3 text-base">
         <h3
           className={[
-            "inline-flex items-center justify-center gap-x-1 leading-none font-semibold",
+            "inline-flex min-w-0 flex-wrap items-center gap-x-1 gap-y-1 leading-tight font-semibold",
             isInteractive
               ? "group-hover:underline group-focus-visible:underline"
               : "",
@@ -63,13 +64,26 @@ export const EntryClient = ({
           <span {...titleProps}>{titleChildren}</span>
           <Badges {...badgesProps}>{badgesChildren}</Badges>
         </h3>
-        <div className="text-sm text-gray-500 tabular-nums" {...timeProps}>
-          {timeChildren}
+        <div className="flex items-center gap-1 text-right text-sm text-muted-foreground tabular-nums">
+          <span {...timeProps}>{timeChildren}</span>
+          {isInteractive && (
+            <ChevronDownIcon
+              aria-hidden="true"
+              className={`size-3.5 shrink-0 transition-transform duration-200 motion-reduce:transition-none ${
+                collapseOpen ? "rotate-180" : ""
+              }`}
+            />
+          )}
         </div>
       </div>
-      <h4 className="font-mono text-sm leading-none" {...subtitleProps}>
-        {subtitleChildren}
-      </h4>
+      {subtitle && (
+        <h4
+          className="font-mono text-sm leading-snug text-pretty"
+          {...subtitleProps}
+        >
+          {subtitleChildren}
+        </h4>
+      )}
     </>
   );
 
@@ -80,7 +94,7 @@ export const EntryClient = ({
           {hasDetails ? (
             <CollapsibleTrigger
               type="button"
-              className="group flex w-full flex-col gap-y-1 text-left outline-hidden"
+              className="group -m-1 flex w-[calc(100%+0.5rem)] cursor-pointer touch-manipulation flex-col gap-y-1 rounded-sm p-1 text-left transition-colors hover:bg-muted/50 focus-visible:bg-muted/50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             >
               {headerContent(true)}
             </CollapsibleTrigger>
@@ -96,7 +110,7 @@ export const EntryClient = ({
         {details && (
           <CollapsibleContent
             keepMounted
-            className="h-(--collapsible-panel-height) overflow-hidden transition-[height] duration-250 ease-out data-ending-style:h-0 data-starting-style:h-0 [&[hidden]:not([hidden='until-found'])]:hidden"
+            className="h-(--collapsible-panel-height) overflow-hidden transition-[height] duration-250 ease-out data-ending-style:h-0 data-starting-style:h-0 motion-reduce:transition-none [&[hidden]:not([hidden='until-found'])]:hidden"
           >
             <CardContent className="mt-2 space-y-2 text-sm">
               <RichContent>{detailsChildren}</RichContent>

@@ -99,7 +99,7 @@ const FriendList: FriendProps[] = [
 ];
 
 export const Friends: FC = () => {
-  const [friends, setFriends] = useState<typeof FriendList>([]);
+  const [friends, setFriends] = useState<typeof FriendList>(FriendList);
 
   useEffect(() => {
     // Shuffle after hydration so the static HTML stays deterministic.

@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import TheAvatar from "@/data/TheAvatar";
 
 const Name = ({ children }: PropsWithChildren) => (
-  <h1 className="text-2xl font-bold">{children}</h1>
+  <h1 className="text-2xl font-bold tracking-tight">{children}</h1>
 );
 
 const About = ({ children }: PropsWithChildren) => (
@@ -27,7 +27,7 @@ const Location = ({ href, children }: PropsWithChildren<{ href: string }>) => (
       rel="noreferrer"
       target="_blank"
     >
-      <GlobeIcon className="h-3 w-3" />
+      <GlobeIcon aria-hidden="true" className="h-3 w-3" />
       {children}
     </a>
   </p>
@@ -43,6 +43,7 @@ type SocialProps = {
       printHidden?: false;
     }
   | {
+      label: string;
       printHidden: true;
     }
 );
@@ -58,8 +59,10 @@ const Social = (props: SocialProps) => {
         size="icon"
         asChild
       >
-        <a href={url} rel="noreferrer" target="_blank">
-          {createElement(icon, { className: "h-4 w-4" })}
+        <a href={url} rel="noreferrer" target="_blank" aria-label={props.label}>
+          <span aria-hidden="true">
+            {createElement(icon, { className: "h-4 w-4" })}
+          </span>
         </a>
       </Button>
       {props.printHidden || (
@@ -105,7 +108,7 @@ const Head = () => (
           <Social
             url={"mailto:me@flandia.dev"}
             icon={MailIcon}
-            label="me@flandia.dev"
+            label="Email: me@flandia.dev"
           />
           <Social
             url="https://github.com/flandia"
@@ -116,11 +119,13 @@ const Head = () => (
           <Social
             url={"https://www.instagram.com/flandia_dev/"}
             icon={SiInstagram}
+            label="Instagram"
             printHidden
           />
           <Social
             url={"https://www.threads.net/@flandia_dev/"}
             icon={SiThreads}
+            label="Threads"
             printHidden
           />
         </Socials>

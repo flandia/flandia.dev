@@ -4,7 +4,10 @@ import Giscus from "@giscus/react";
 
 export function Comments() {
   return (
-    <div className="print:hidden">
+    <section aria-labelledby="comments-title" className="print:hidden">
+      <h2 id="comments-title" className="sr-only">
+        Comments
+      </h2>
       <Giscus
         repo="flandia/flandia.dev"
         repoId="R_kgDOK_J-pA"
@@ -20,6 +23,6 @@ export function Comments() {
         lang="en"
         loading="lazy"
       />
-    </div>
+    </section>
   );
 }

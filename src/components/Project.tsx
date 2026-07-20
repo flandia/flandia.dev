@@ -13,6 +13,11 @@ const statusColorClass: Record<Status, string> = {
   wip: "bg-amber-500",
 };
 
+const statusLabel: Record<Status, string> = {
+  online: "Online",
+  wip: "WIP",
+};
+
 export const ProjectTitle = createSlot("span");
 export const ProjectDescription = createSlot("span");
 export const ProjectBadges = createSlot("div");
@@ -57,7 +62,9 @@ export function Project({
                 className="inline-flex items-center gap-1 hover:underline"
               >
                 <span {...projectTitleProps}>{titleChildren}</span>
+                <span className="sr-only"> - {statusLabel[status]}</span>
                 <span
+                  aria-hidden="true"
                   className={twMerge("mx-1 h-1 w-1 rounded-full", colorClass)}
                 />
               </a>

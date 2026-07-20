@@ -26,13 +26,13 @@ export const SubEntry = ({ children }: PropsWithChildren) =>
     return (
       <Card>
         <CardHeader>
-          <div className="flex items-center justify-between text-base">
-            <h4 className="inline-flex flex-wrap items-center gap-2 text-sm leading-none font-semibold text-gray-700">
+          <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-x-3 text-base">
+            <h4 className="inline-flex min-w-0 flex-wrap items-center gap-2 text-sm leading-snug font-semibold text-foreground/85">
               <span {...titleProps}>{titleChildren}</span>
               <Badges {...badgesProps}>{badgesChildren}</Badges>
             </h4>
             <div
-              className="shrink-0 text-sm text-gray-500 tabular-nums"
+              className="shrink-0 text-right text-sm text-muted-foreground tabular-nums"
               {...timeProps}
             >
               {timeChildren}

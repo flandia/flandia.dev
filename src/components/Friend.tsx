@@ -29,7 +29,7 @@ export const Friend: FC<FriendProps> = (props) => {
       .join("");
 
   return (
-    <Card className="-m-1 flex aspect-square flex-col items-center justify-center gap-1 p-2">
+    <Card className="-m-1 flex aspect-square min-w-0 flex-col items-center justify-center gap-1 rounded-md p-2 transition-colors focus-within:bg-muted/35 hover:bg-muted/35 motion-reduce:transition-none">
       <Avatar className="size-16">
         <AvatarImage src={avatar} className="object-cover" />
         <AvatarFallback>{initials}</AvatarFallback>
@@ -38,7 +38,7 @@ export const Friend: FC<FriendProps> = (props) => {
         href={href}
         rel="noreferrer"
         target="_blank"
-        className="inline-flex font-semibold hover:underline"
+        className="inline-flex text-center font-semibold hover:underline"
       >
         {name}
       </a>
