@@ -34,7 +34,7 @@ export function SectionTitle(props: PropsWithChildren<{}>) {
   const { children, ...rest } = props;
   return (
     <h2
-      className="break-after-avoid text-xl font-bold tracking-tight"
+      className="break-after-avoid text-xl leading-snug font-bold tracking-tight"
       {...rest}
     >
       {children}
@@ -45,7 +45,7 @@ export function SectionTitle(props: PropsWithChildren<{}>) {
 export function SectionText(props: PropsWithChildren<{}>) {
   const { children, ...rest } = props;
   return (
-    <div className="font-mono text-sm text-pretty" {...rest}>
+    <div {...rest}>
       <RichContent>{children}</RichContent>
     </div>
   );

@@ -45,10 +45,7 @@ function CardTitle({
   return (
     <h3
       ref={ref}
-      className={cn(
-        "text-2xl leading-none font-semibold tracking-tight",
-        className,
-      )}
+      className={cn("text-base leading-snug font-semibold", className)}
       {...props}
     >
       {children}
@@ -66,7 +63,7 @@ function CardContent({
     <div
       ref={ref}
       className={cn(
-        "font-mono text-sm text-pretty text-muted-foreground",
+        "text-muted-foreground [--prose-font-size:var(--text-xs)] [--prose-line-height:var(--text-xs--line-height)]",
         className,
       )}
       {...props}
