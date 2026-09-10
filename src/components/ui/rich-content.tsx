@@ -134,13 +134,11 @@ const renderMarkdown = (markdown: string, key?: string) => {
           />
         ),
         ol: ({ node: _node, ...props }) => (
-          <ol {...props} className="ml-4 list-decimal space-y-1" />
+          <ol {...props} className="list-outside list-decimal pl-4" />
         ),
-        p: ({ node: _node, ...props }) => (
-          <p {...props} className="leading-relaxed text-pretty" />
-        ),
+        p: ({ node: _node, ...props }) => <p {...props} />,
         ul: ({ node: _node, ...props }) => (
-          <ul {...props} className="ml-4 list-disc space-y-1" />
+          <ul {...props} className="list-outside list-disc pl-4" />
         ),
       }}
     >
@@ -216,9 +214,15 @@ const renderMixedContent = (
 export function RichContent({ children }: RichContentProps) {
   const markdown = toMarkdownString(children);
 
-  if (markdown == null) {
-    return <>{renderMixedContent(children)}</>;
-  }
-
-  return renderMarkdown(markdown);
+  return (
+    <div
+      className={
+        markdown == null ? "prose-content [&>*+*]:mt-2" : "prose-content"
+      }
+    >
+      {markdown == null
+        ? renderMixedContent(children)
+        : renderMarkdown(markdown)}
+    </div>
+  );
 }

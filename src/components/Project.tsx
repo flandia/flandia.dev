@@ -1,10 +1,17 @@
 import { PropsWithChildren } from "react";
 import { twMerge } from "tailwind-merge";
 
+import {
+  ExpandableDetails,
+  ExpandableDetailsContent,
+  ExpandableDetailsTrigger,
+  ProjectCardFrame,
+} from "@/components/ui/expandable-details";
+import { ProjectCardCollection } from "@/components/ui/project-card-collection";
 import { RichContent } from "@/components/ui/rich-content";
 import { createHost, createSlot } from "@/lib/slots";
 
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { CardContent, CardHeader, CardTitle } from "./ui/card";
 
 type Status = "online" | "wip";
 
@@ -20,6 +27,7 @@ const statusLabel: Record<Status, string> = {
 
 export const ProjectTitle = createSlot();
 export const ProjectDescription = createSlot();
+export const ProjectDetails = createSlot();
 export const ProjectBadges = createSlot();
 export const ProjectLabel = createSlot();
 
@@ -39,22 +47,21 @@ export function Project({
   return createHost(children, (Slots) => {
     const titleProps = Slots.getProps(ProjectTitle);
     const descriptionProps = Slots.getProps(ProjectDescription);
+    const detailsProps = Slots.getProps(ProjectDetails);
     const badgesProps = Slots.getProps(ProjectBadges);
     const labelProps = Slots.getProps(ProjectLabel);
     const { children: titleChildren, ...projectTitleProps } = titleProps ?? {};
     const { children: badgesChildren, ...projectBadgesProps } =
       badgesProps ?? {};
     const { children: labelChildren, ...projectLabelProps } = labelProps ?? {};
-    return (
-      <Card
-        className={twMerge(
-          "flex flex-col overflow-hidden border border-muted p-3",
-          hiddenPrint && "print:hidden",
-        )}
+    const content = (
+      <ProjectCardFrame
+        className="flex flex-col overflow-hidden border border-muted p-3"
+        hiddenPrint={hiddenPrint}
       >
-        <CardHeader className="">
-          <div className="space-y-1">
-            <CardTitle className="text-base">
+        <CardHeader>
+          <div className="flex items-start justify-between gap-1">
+            <CardTitle className="min-w-0">
               <a
                 href={href}
                 target="_blank"
@@ -69,26 +76,42 @@ export function Project({
                 />
               </a>
             </CardTitle>
-            <div className="hidden font-mono text-xs underline print:block">
-              <span {...projectLabelProps}>{labelChildren}</span>
-            </div>
-            <div className="font-mono text-xs text-muted-foreground">
-              <RichContent>{descriptionProps?.children}</RichContent>
-            </div>
+            {detailsProps ? (
+              <ExpandableDetailsTrigger className="-my-1.5 size-8 shrink-0 justify-center">
+                <span className="sr-only">{titleChildren} details</span>
+              </ExpandableDetailsTrigger>
+            ) : null}
+          </div>
+          <div className="hidden body-copy underline print:block">
+            <span {...projectLabelProps}>{labelChildren}</span>
           </div>
         </CardHeader>
-        <CardContent className="my-auto flex">
-          <div className="mt-2 flex flex-wrap gap-1" {...projectBadgesProps}>
+        <CardContent className="mt-1">
+          <RichContent>{descriptionProps?.children}</RichContent>
+        </CardContent>
+        {detailsProps ? (
+          <ExpandableDetailsContent>
+            <CardContent>
+              <RichContent>{detailsProps.children}</RichContent>
+            </CardContent>
+          </ExpandableDetailsContent>
+        ) : null}
+        <CardContent className="mt-auto flex pt-2">
+          <div className="flex flex-wrap gap-1" {...projectBadgesProps}>
             {badgesChildren}
           </div>
         </CardContent>
-      </Card>
+      </ProjectCardFrame>
+    );
+
+    return detailsProps ? (
+      <ExpandableDetails>{content}</ExpandableDetails>
+    ) : (
+      content
     );
   });
 }
 
 export const ProjectCards = ({ children }: PropsWithChildren) => (
-  <div className="-mx-3 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 print:grid-cols-3 print:gap-2">
-    {children}
-  </div>
+  <ProjectCardCollection>{children}</ProjectCardCollection>
 );

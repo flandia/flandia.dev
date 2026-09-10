@@ -13,15 +13,13 @@ const Name = ({ children }: PropsWithChildren) => (
 );
 
 const About = ({ children }: PropsWithChildren) => (
-  <div className="max-w-xl font-mono text-sm text-pretty text-muted-foreground">
-    {children}
-  </div>
+  <div className="max-w-xl body-copy text-muted-foreground">{children}</div>
 );
 
 const Location = ({ href, children }: PropsWithChildren<{ href: string }>) => (
-  <p className="max-w-md items-center font-mono text-xs text-pretty text-muted-foreground">
+  <p className="max-w-md body-copy text-muted-foreground">
     <a
-      className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
+      className="inline-flex items-center gap-x-1.5 align-baseline hover:underline"
       href={href}
       rel="noreferrer"
       target="_blank"
@@ -56,7 +54,11 @@ const Social = (props: SocialProps) => {
         href={url}
         rel="noreferrer"
         target="_blank"
-        aria-label={props.label}
+        aria-label={
+          props.printHidden
+            ? props.label
+            : `${props.labelPrefix ?? ""}${props.label}`
+        }
         className="inline-flex size-8 items-center justify-center rounded-md border border-input bg-background text-sm font-medium whitespace-nowrap ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-hidden print:hidden"
       >
         <span aria-hidden="true">
@@ -74,7 +76,7 @@ const Social = (props: SocialProps) => {
 };
 
 const Socials = ({ children }: PropsWithChildren) => (
-  <div className="flex flex-row flex-wrap gap-x-1 gap-y-1 pt-1 font-mono text-sm text-muted-foreground">
+  <div className="flex flex-row flex-wrap gap-1 pt-1 body-copy text-muted-foreground">
     {children}
   </div>
 );
@@ -82,14 +84,7 @@ const Socials = ({ children }: PropsWithChildren) => (
 const Head = () => (
   <div className="flex flex-col gap-2">
     <Name>
-      Harry Y. H. Li <span className="font-normal">|</span>{" "}
-      <ruby>
-        李<rt>Li</rt>
-      </ruby>
-      <ruby>
-        裕康
-        <rt>Yu Hong</rt>
-      </ruby>
+      Harry Y. H. Li <span className="font-normal">|</span> 李裕康
     </Name>
     <div className="flex">
       <div className="flex flex-1 flex-col gap-2">

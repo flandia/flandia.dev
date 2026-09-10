@@ -12,6 +12,7 @@ import {
   ProjectBadges,
   ProjectCards,
   ProjectDescription,
+  ProjectDetails,
   ProjectLabel,
   ProjectTitle,
 } from "@/components/Project";
@@ -31,7 +32,9 @@ const Body = () => (
     <Section>
       <SectionTitle>About</SectionTitle>
       <SectionText>{md`
-        I'm an enthusiastic student interested in various fields in computer science. My research interests primarily focus on theoretical computer science (theory B) and particularly in _programming languages_. I am methodically experienced in (fullstack) software engineering. I am also experienced in and currently exploring data mining, analysis, and visualization.
+        I am Yu Hong Harry Li and I go by Harry; I also go by Flandia online.
+
+        I'm interested in a broad range of topics in computer science. My research interests focus on TCS B, particularly programming languages, as well as software engineering and systems. I also have experience in full-stack software engineering, data mining, analysis, and visualization.
       `}</SectionText>
     </Section>
     <Section>
@@ -42,16 +45,19 @@ const Body = () => (
           Bachelor of Engineering in Computer Science
         </EntrySubtitle>
         <EntryTime>2023 - 2027</EntryTime>
+        <EntryDescription>{md`
+          GPA: **4.215/4.300**
+          Class Rank: **1/170**
+        `}</EntryDescription>
         <EntryDetails>
           {md`
-            (As of March 13, 2026)
+            As of March 13, 2026:
 
-            Cumulative Grade Average (CGA): 4.211/4.3
-            Major Cumulative Grade Average (MCGA): 4.216/4.3
+            GPA: 4.211/4.300
+            Major GPA: 4.216/4.300
             Class Rank: 1/170
 
-            Got A+ in **all** Computer Science courses.
-            Ranked 1st in **more than half** of the Computer Science courses.
+            Earned A+ grades in **all** Computer Science courses.
           `}
           <SubEntry>
             <SubEntryTitle>COMP 4021 Internet Computing</SubEntryTitle>
@@ -180,13 +186,10 @@ const Body = () => (
         <EntryTitle>University of Pennsylvania</EntryTitle>
         <EntrySubtitle>Exchange Program in Engineering School</EntrySubtitle>
         <EntryTime>2025-26 Spring</EntryTime>
+        <EntryDescription>GPA: **4.00/4.00**</EntryDescription>
         <EntryDetails>
           {md`
-            Nominated by HKUST School of Engineering to participate in an exchange program at UPenn in 2025-26 Spring.
-
-            (As of May 13, 2026)
-
-            GPA: 4.00/4.00
+            Nominated by HKUST School of Engineering for an exchange at UPenn in 2025-26 Spring.
           `}
           <SubEntry>
             <SubEntryTitle>CIS 5450 Big Data Analytics</SubEntryTitle>
@@ -336,28 +339,35 @@ const Body = () => (
       <SectionTitle>Research Experiences</SectionTitle>
       <Entry>
         <EntryTitle>Final Year Thesis</EntryTitle>
-        <EntrySubtitle>Type System Design and Implementation</EntrySubtitle>
-        <EntryTime>2025-26 Summer</EntryTime>
+        <EntrySubtitle>Flow-Based Program Optimization</EntrySubtitle>
+        <EntryTime>2026 - 2027</EntryTime>
         <EntryBadges>
           <LightBadge>Ongoing</LightBadge>
         </EntryBadges>
         <EntryDescription>{md`
-          Supervised by [Prof. Lionel Parreaux](https://lptk.github.io/about.html). Developing novel type system ideas, implementing them in a prototype, and formalizing them to mathematically prove important correctness properties. Potential directions include dependent types, higher-order subtyping, substructural type systems (à la Rust), effect systems, SMT solver integration, and type inference.
+          COMP 4981H · Project LP4. Advised by [Prof. Lionel Parreaux](https://lptk.github.io/about.html).
+
+          I'm exploring flow analysis for program optimization in MLscript. My current focus is tracking effects and mutable accesses so that optimizations preserve program behavior.
         `}</EntryDescription>
+        <EntryDetails>{md`
+          The prototype tracks whether a function may raise an effect. Next, I plan to track mutable reads and use this information to make transformations such as eta expansion safe.
+
+          Other directions I'm considering include reusable analysis results, constructor/destructor analysis, deforestation, and dead-code elimination.
+        `}</EntryDetails>
       </Entry>
       <Entry>
-        <EntryTitle>Research Internship</EntryTitle>
-        <EntrySubtitle>Opal Extension</EntrySubtitle>
-        <EntryTime>2025-26 Spring</EntryTime>
+        <EntryTitle>Research Collaboration</EntryTitle>
+        <EntrySubtitle>Opportunistic Parallelism</EntrySubtitle>
+        <EntryTime>Since 2025-26 Spring</EntryTime>
         <EntryBadges>
           <LightBadge>Ongoing</LightBadge>
         </EntryBadges>
         <EntryDescription>{md`
-          This program is advised by [Prof. Osbert Bastani](https://obastani.github.io/) and [Dr. Stephen Mell](https://mell.ac/). I am working on extensions to [Opportunistically Parallel Lambda Calculus](https://arxiv.org/pdf/2405.11361.pdf) (Opal), a calculus for opportunistic parallelism.
+          I work on the project PopPy at the University of Pennsylvania with [Prof. Osbert Bastani](https://obastani.github.io/) and [Dr. Stephen Mell](https://mell.ac/), extending [Opportunistically Parallel Lambda Calculus](https://arxiv.org/pdf/2405.11361.pdf) (Opal). I joined the collaboration in Spring 2026 and also took part in a summer research internship.
 
-          I am extending Opal with control-flow constructs (early-\`return\`, \`break\`, and \`continue\`) by formalizing their syntax and semantics in the Bezoar intermediate language and designing a source-to-source compilation from "Bezoar with control-flow" to core Bezoar.
+          I extended Opal with control-flow constructs (early-\`return\`, \`break\`, and \`continue\`) by formalizing their syntax and semantics in the Bezoar intermediate language and designing a source-to-source compilation from "Bezoar with control-flow" to core Bezoar.
 
-          We are also investigating how to preserve opportunistic parallelism, potentially by leveraging partial redundancy elimination and control-flow analysis.
+          I'm currently working on designing and implementing mutation support for PopPy, with the broader goal of supporting arbitrary side-effects. The plan includes control-flow analysis and connects with my thesis on flow-based program optimization.
         `}</EntryDescription>
       </Entry>
       <Entry>
@@ -367,12 +377,12 @@ const Body = () => (
         </EntrySubtitle>
         <EntryTime>2024-25 Fall, Spring, Summer. 2025-26 Fall</EntryTime>
         <EntryDescription>{md`
-          This program was supervised by [Prof. Lionel Parreaux](https://lptk.github.io/about.html). I was mainly working on the programming language and compiler designed and implemented by our lab, called _MLscript_. In particular, I was working on:
+          Advised by [Prof. Lionel Parreaux](https://lptk.github.io/about.html), I worked on _MLscript_, our lab's programming language and compiler:
 
-          - Module System. This is a minimal type system for modules - a singleton object construct in MLscript where we pose certain restrictions on their usage. This was mainly to support implementing ad hoc polymorphism features later in the compiler, such as type classes (see below). I also tried to formalize the system naively in a type-theoretic way, although I haven't proved any properties about it yet. This system is planned to be deprecated in favor of the flow analysis pass (see below) in the future.
-          - Type Classes. A traditional ad hoc polymorphism feature usually found in functional programming languages. This feature was fully based on the module system (see above) and was not based on traditional approaches that rely on type checking and type inference (this choice is due to a design goal of MLscript that compilation should be orthogonal to type checking and type inference).
-          - Resolution Pass. A new compiler pass that resolves information of references, selections, and applications of the program without performing a traditional kind of type checking or type inference. This pass effectively bases the module system and type classes features, and also any future ad hoc polymorphism features that require call-site handling.
-          - Flow Analysis Pass. A new compiler pass that performs a flow-based analysis on the system to gather and derive more precise information about what values flow to what variables in the program. This pass is planned to effectively replace the module system (see above) to support ad hoc polymorphism features, so that the extra restrictions we put on modules will be no longer required in the future.
+          - **Module system:** worked on a minimal module system to support ad hoc polymorphism and explored a type-theoretic formalization.
+          - **Type classes:** implemented module-based type classes, keeping compilation separate from type checking and inference.
+          - **Resolution pass:** developed a compiler pass to resolve references, selections, and applications without type checking, supporting modules and type classes.
+          - **Control-flow analysis:** explored how values flow through a program, with the longer-term goal of relaxing module restrictions and supporting ad hoc polymorphism.
         `}</EntryDescription>
       </Entry>
       <Entry>
@@ -384,7 +394,7 @@ const Body = () => (
         </EntrySubtitle>
         <EntryTime>2023-24 Summer</EntryTime>
         <EntryDescription>{md`
-          This program was supervised by [Prof. Yangqiu Song](https://www.cse.ust.hk/~yqsong/) and PhD candidate Zihao Wang. I studied a postgraduate course about graph machine learning, graph neural networks, and knowledge graphs. I participated in a research project about logic reasoning over knowledge graphs, where I gained hands-on experience in the research field.
+          I was advised by [Prof. Yangqiu Song](https://www.cse.ust.hk/~yqsong/) and PhD candidate [Zihao Wang](https://zihao-wang.github.io/). I studied a postgraduate course about graph machine learning, graph neural networks, and knowledge graphs. I participated in a research project about logic reasoning over knowledge graphs, where I gained hands-on experience in the research field.
         `}</EntryDescription>
       </Entry>
     </Section>
@@ -395,12 +405,12 @@ const Body = () => (
         <EntrySubtitle>CRS Request System</EntrySubtitle>
         <EntryTime>2025-26 Fall, Winter</EntryTime>
         <EntryDescription>{md`
-          This project is supervised by Prof. Desmond Tsoi.
+          Advised by [Prof. Desmond Tsoi](https://www.cse.ust.hk/~desmond/). The system serves **COMP 1023, COMP 2011, COMP 2012, and COMP 2211**, with **over 2,000 active users**.
 
-          - Developed a web app that allows students in the department to effectively handle course administration matters, such as making class swapping and absence requests, and assignment deadline extension requests.
-          - Designed the backend and frontend architecture with cutting-edge web and software engineering technologies and best practices.
+          - Built student and instructor workflows for class swaps, absences, and assignment deadline extensions.
+          - Designed the application with TypeScript, Zod, tRPC, MongoDB, and React/Next.js.
 
-          For more information, please visit the project page at [github.com/HKUST-CRS/crs](https://github.com/HKUST-CRS/crs).
+          [Project repository](https://github.com/HKUST-CRS/crs).
         `}</EntryDescription>
       </Entry>
       <Entry>
@@ -411,11 +421,10 @@ const Body = () => (
         </EntrySubtitle>
         <EntryTime>2024-25 Spring, 2025-26 Fall</EntryTime>
         <EntryDescription>{md`
-          This project is supervised by Prof. Desmond Tsoi, in collaboration with Professor Mei Yi Angel Lin from the Education University of Hong Kong.
+          Co-advised by [Prof. Desmond Tsoi](https://www.cse.ust.hk/~desmond/) and [Prof. Mei Yi Angel Lin](https://www.eduhk.hk/en/experts/professor-lin-mei-yi-angel) at the Education University of Hong Kong.
 
-          - Developed an innovative app that leverages AI agents to dynamically and adaptively train and assess language skills utilizing large language models' (LLMs) multimodality capabilities.
-          - Designed specifically for English learners from Mainland China and Hong Kong, the app understands Mandarin and Cantonese and actively assists users in translating their native language to English during conversations.
-          - Adopted user-centric educational philosophies to ensure the app effectively meets the learning needs of its target audience (with the help from Professor Mei Yi Angel Lin).
+          - Developed an app that uses multimodal language models to help learners practice English and assess their language skills.
+          - Supported Mandarin- and Cantonese-speaking learners with translation assistance during English conversations.
         `}</EntryDescription>
       </Entry>
       <Entry>
@@ -423,25 +432,27 @@ const Body = () => (
         <EntrySubtitle>Undergraduate Teaching Assistant</EntrySubtitle>
         <EntryTime>2023-24 Spring - Now</EntryTime>
         <EntryDescription>{md`
-          After I performed outstandingly in computer science courses, instructors invited me to serve as an undergraduate teaching assistant (UGTA). As of 2025-26 Winter, I have served as a UGTA for 8 semesters (including Summer and Winter) throughout 3 courses (COMP 2011 C++ Programming, 2012 Object-Oriented Programming and Data Structures and 1023 Introduction to Python Programming).
+          As **Main TA for COMP 1023**, I teach the course's tutorial sections. In other UGTA roles, I help deliver tutorials and labs, prepare course materials, and answer students' questions. My winter and summer appointments focus primarily on preparing assignments, tutorial notes, lecture notes, and self-tests.
 
-          - Assisting instructors in preparing course materials, including assignments, tutorial notes, lecture notes and self-tests.
-          - Answering students' questions and providing guidance on lecture materials, assignments, environment set-up, as well as introducing advanced topics to students if they are interested.
-          - Presenting tutorial sessions to help students better understand the course materials and improve their programming skills.
+          - **COMP 1023 - Introduction to Python Programming**
+            Course coordinator: [Prof. Desmond Tsoi](https://www.cse.ust.hk/~desmond/).
+            Main TA: Fall 2026, Fall 2025; UGTA: Summer 2025, Summer 2024.
+          - **COMP 2011 - C++ Programming**
+            Course coordinator: [Prof. Brian Mak](https://cse.hkust.edu.hk/faculty/mak/).
+            UGTA: Spring 2025, Winter 2025, Spring 2024.
+          - **COMP 2012 - Object-Oriented Programming and Data Structures**
+            Course coordinator: [Prof. Brian Mak](https://cse.hkust.edu.hk/faculty/mak/).
+            UGTA: Winter 2026, Fall 2024.
         `}</EntryDescription>
       </Entry>
       <Entry>
         <EntryTitle>GREAT Smart Cities Institute, HKUST</EntryTitle>
         <EntrySubtitle>Summer Internship</EntrySubtitle>
-        <EntryTime>2023-24 Summer - Now</EntryTime>
-        <EntryBadges>
-          <LightBadge>Part Time</LightBadge>
-        </EntryBadges>
+        <EntryTime>Summer 2024 - approx. Fall 2025</EntryTime>
         <EntryDescription>{md`
-          - Developed an automated software solution utilizing computer vision technology to efficiently process and analyze traffic data.
-          - Integrated the software solution with GIS software to enhance data visualization and spatial analysis capabilities.
-          - Performed data analysis on the processed traffic data to extract meaningful information, insights, and patterns.
-          - Streamlined workflows to improve the accuracy and speed of traffic data processing.
+          - Built computer-vision tools to automate traffic-data processing and analysis.
+          - Integrated the results with GIS software for visualization and spatial analysis.
+          - Analyzed traffic patterns and improved the team's data-processing workflows.
         `}</EntryDescription>
       </Entry>
       <Entry>
@@ -453,11 +464,15 @@ const Body = () => (
           <LightBadge>Voluntary</LightBadge>
         </EntryBadges>
         <EntryDescription>{md`
-          USThing is a student-developed all-in-one app for HKUST. The team consists of passionate and talented students who work towards continually improving the app and the HKUST student community.
+          [USThing](https://usthing.xyz) is a student-run app for HKUST. I led the backend and app teams within the 26-member organization.
 
-          - Leading the backend team in refactoring the backend server architecture into a containerized microservice architecture, improving performance and maintainability.
-          - Leading the app team in revamping our old apps, migrating them from old native apps for Android and iOS, respectively, into one app built with React Native technology.
-          - Leading the team in refactoring the CI/CD workflow of the development process of both the backend team and the app team, automating, simplifying and improving the efficiency of the integration and deployment/release process.
+          I led a rewrite from **June to August 2024** to bring an unmaintained backend and its dependent features back into service.
+
+          - Rebuilt the backend around containerized microservices and migrated separate native Android/iOS applications to React Native.
+          - Used TypeScript types and OpenAPI contracts to keep the frontend and backend interfaces consistent.
+          - Coordinated development across both teams and improved CI/CD and release workflows.
+
+          The app later recorded **15,000 active users over a 90-day period** and **up to 5,000 daily active users**.
         `}</EntryDescription>
       </Entry>
     </Section>
@@ -468,7 +483,7 @@ const Body = () => (
         <EntrySubtitle>ICFP 2026, Indianapolis, IN, USA</EntrySubtitle>
         <EntryTime>2026</EntryTime>
         <EntryDescription>{md`
-          Serving on the [ICFP 2026 Artifact Evaluation Committee](https://icfp26.sigplan.org/committee/icfp-2026-artifact-evaluation-organization-committee) (co-chaired by [Son Ho](https://icfp26.sigplan.org/profile/sonho) and [Prof. Lionel Parreaux](https://lptk.github.io/about.html)), reviewing artifacts submitted to the International Conference on Functional Programming.
+          Serving on the [ICFP 2026 Artifact Evaluation Committee](https://icfp26.sigplan.org/committee/icfp-2026-artifact-evaluation-organization-committee) (co-chaired by [Son Ho](https://www.sonho.fr/) and [Prof. Lionel Parreaux](https://lptk.github.io/about.html)), reviewing artifacts submitted to the International Conference on Functional Programming.
         `}</EntryDescription>
       </Entry>
       <Entry>
@@ -509,6 +524,7 @@ const Body = () => (
             <DarkBadge>Java</DarkBadge>
             <DarkBadge>Kotlin</DarkBadge>
             <DarkBadge>Scala</DarkBadge>
+            <DarkBadge>OCaml</DarkBadge>
             <DarkBadge>Haskell</DarkBadge>
             <DarkBadge>Rust</DarkBadge>
             <DarkBadge>MLscript</DarkBadge>
@@ -543,7 +559,7 @@ const Body = () => (
         </EntryDescription>
       </Entry>
       <Entry>
-        <EntryTitle>Misc</EntryTitle>
+        <EntryTitle>Tools</EntryTitle>
         <EntryDescription>
           <Badges>
             <DarkBadge>Git</DarkBadge>
@@ -554,8 +570,6 @@ const Body = () => (
             <DarkBadge>Typst</DarkBadge>
             <DarkBadge>ChatGPT</DarkBadge>
             <DarkBadge>GenAI</DarkBadge>
-            <DarkBadge>Video Games</DarkBadge>
-            <DarkBadge>Mobile Games</DarkBadge>
             <DarkBadge>Adobe Photoshop</DarkBadge>
             <DarkBadge>Adobe Premiere Pro</DarkBadge>
           </Badges>
@@ -565,19 +579,44 @@ const Body = () => (
     <Section hiddenPrint>
       <SectionTitle>Projects</SectionTitle>
       <ProjectCards>
+        <Project href="https://ust-rankings.com">
+          <ProjectTitle>UST Rankings</ProjectTitle>
+          <ProjectDescription>{md`
+            A course and instructor analytics site for HKUST, bringing together student reviews, official feedback, and course information.
+
+            Around **20,000 active users** during August 8 - September 4, 2026.
+          `}</ProjectDescription>
+          <ProjectDetails>{md`
+            I combine data from ust.space, official Student Feedback Questionnaires, and course schedules. Matching instructor records across sources involves manual review and LLM assistance.
+
+            The rating model combines feedback from multiple sources and standardizes scores using weighted historical data.
+
+            Versioned datasets are queried in the browser with DuckDB-Wasm. A backend manages instructor records and validates community contributions.
+          `}</ProjectDetails>
+          <ProjectBadges>
+            <LightBadge>DuckDB-Wasm</LightBadge>
+            <LightBadge>SQL</LightBadge>
+            <LightBadge>TypeScript</LightBadge>
+            <LightBadge>Data Integration</LightBadge>
+          </ProjectBadges>
+          <ProjectLabel>ust-rankings.com</ProjectLabel>
+        </Project>
         <Project href="https://arkwaifu.cc">
           <ProjectTitle>Arkwaifu</ProjectTitle>
-          <ProjectDescription>
-            A website arranging and providing almost all artworks extracted from
-            Arknights (a mobile game).
-          </ProjectDescription>
+          <ProjectDescription>{md`
+            An Arknights artwork and story archive with browsing, search, and automated updates across game regions.
+
+            Around **1,400 active users** during August 8 - September 4, 2026.
+          `}</ProjectDescription>
+          <ProjectDetails>{md`
+            Version 2 uses a Python updater and React frontend to organize artwork and stories from the CN, EN, JP, KR, and TW regions. Linked asset records connect artwork with stories and galleries.
+
+            Earlier versions used Go, Vue/Vuetify, and PostgreSQL, with Real-ESRGAN and Real-CUGAN for image upscaling.
+          `}</ProjectDetails>
           <ProjectBadges>
-            <LightBadge>Golang</LightBadge>
             <LightBadge>Python</LightBadge>
-            <LightBadge>Vue</LightBadge>
-            <LightBadge>Vuetify</LightBadge>
-            <LightBadge>Material Design</LightBadge>
-            <LightBadge>PostgreSQL</LightBadge>
+            <LightBadge>React</LightBadge>
+            <LightBadge>TypeScript</LightBadge>
             <LightBadge>Docker</LightBadge>
             <LightBadge>Arknights</LightBadge>
           </ProjectBadges>
@@ -586,8 +625,8 @@ const Body = () => (
         <Project href="https://flandia.dev">
           <ProjectTitle>the Home Page</ProjectTitle>
           <ProjectDescription>
-            A résumé-like home page for myself (this page). This page also
-            showcases a collection of some of my projects.
+            My personal website and portfolio, covering research, projects,
+            teaching, and other experiences.
           </ProjectDescription>
           <ProjectBadges>
             <LightBadge>Side Project</LightBadge>
@@ -603,10 +642,11 @@ const Body = () => (
           <ProjectLabel>flandia.dev</ProjectLabel>
         </Project>
         <Project href="https://github.com/HKUST-CRS/crs">
-          <ProjectTitle>CSE Request System</ProjectTitle>
+          <ProjectTitle>CRS Request System</ProjectTitle>
           <ProjectDescription>
-            A one-stop platform for students/instructors to handle all
-            course-administrative requests.
+            A platform for students and instructors to manage class swaps,
+            absences, and deadline extensions. Used across four HKUST courses,
+            with over 2,000 active users.
           </ProjectDescription>
           <ProjectBadges>
             <LightBadge>Bun</LightBadge>
@@ -625,10 +665,9 @@ const Body = () => (
         <Project href="https://github.com/flandia/from-do">
           <ProjectTitle>From Do</ProjectTitle>
           <ProjectDescription>
-            An experimental, interactive domain-specific language that behaves
-            as a to-do app. The compiler features a hand-written two-stage
-            lexer, recursive-descent parser, relative-date/time evaluator, and a
-            pretty-printer. It is shipped as a VS Code extension.
+            An experimental to-do language and VS Code extension, with a
+            compiler written in Rust. It supports relative dates and times, with
+            a hand-written parser and pretty-printer.
           </ProjectDescription>
           <ProjectBadges>
             <LightBadge>Rust</LightBadge>

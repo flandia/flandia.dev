@@ -31,18 +31,25 @@ export const Friend: FC<FriendProps> = (props) => {
   return (
     <Card className="-m-1 flex aspect-square min-w-0 flex-col items-center justify-center gap-1 rounded-md p-2 transition-colors focus-within:bg-muted/35 hover:bg-muted/35 motion-reduce:transition-none">
       <Avatar className="size-16">
-        <AvatarImage src={avatar} className="object-cover" />
+        <AvatarImage
+          src={avatar}
+          alt=""
+          width={64}
+          height={64}
+          loading="lazy"
+          className="object-cover"
+        />
         <AvatarFallback>{initials}</AvatarFallback>
       </Avatar>
       <a
         href={href}
         rel="noreferrer"
         target="_blank"
-        className="inline-flex text-center font-semibold hover:underline"
+        className="inline-flex text-center text-base leading-snug font-semibold hover:underline"
       >
         {name}
       </a>
-      <div className={twMerge("text-center font-mono text-xs", styles.desc)}>
+      <div className={twMerge("text-center", styles.desc)}>
         <RichContent>{desc}</RichContent>
       </div>
     </Card>

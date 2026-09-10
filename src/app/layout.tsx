@@ -19,7 +19,7 @@ const ibm_plex_mono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Harry Li | 李裕康",
+  title: "Harry Y. H. Li | 李裕康",
   description:
     "Enthusiastic developer, learner, and researcher, passionate about learning new theories, practices and methodologies through intuition and hands-on experiences.",
 };
