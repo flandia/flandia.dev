@@ -338,7 +338,7 @@ const Body = () => (
     <Section>
       <SectionTitle>Research Experiences</SectionTitle>
       <Entry>
-        <EntryTitle>Final Year Thesis</EntryTitle>
+        <EntryTitle>Undergraduate Thesis</EntryTitle>
         <EntrySubtitle>Flow-Based Program Optimization</EntrySubtitle>
         <EntryTime>2026 - 2027</EntryTime>
         <EntryBadges>
