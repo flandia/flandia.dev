@@ -362,11 +362,17 @@ const Body = () => (
           <LightBadge>Ongoing</LightBadge>
         </EntryBadges>
         <EntryDescription>{md`
-          I work on the project PopPy at the University of Pennsylvania with [Prof. Osbert Bastani](https://obastani.github.io/) and [Dr. Stephen Mell](https://mell.ac/), extending [Opportunistically Parallel Lambda Calculus](https://arxiv.org/pdf/2405.11361.pdf) (Opal). I joined the collaboration in Spring 2026 and also took part in a summer research internship.
+          I work on PopPy, a compiler for parallelizing Python agentic programs, at the University of Pennsylvania with [Prof. Osbert Bastani](https://obastani.github.io/) and [Dr. Stephen Mell](https://mell.ac/). I joined the collaboration in Spring 2026 and also took part in a summer research internship. PopPy is named Ocelot in the manuscript below.
 
-          I extended Opal with control-flow constructs (early-\`return\`, \`break\`, and \`continue\`) by formalizing their syntax and semantics in the Bezoar intermediate language and designing a source-to-source compilation from "Bezoar with control-flow" to core Bezoar.
+          I extended Bezoar, PopPy's intermediate language, with control transfer statements (early \`return\`, \`break\`, and \`continue\`) and a general \`for\`/\`while\` loop construct. I formalized the extension's syntax, semantics, and lowering to core Bezoar.
 
-          I'm currently working on designing and implementing mutation support for PopPy, with the broader goal of supporting arbitrary side-effects. The plan includes control-flow analysis and connects with my thesis on flow-based program optimization.
+          I'm designing a unified effect system to broaden PopPy's support for effects such as object mutation and I/O. This ongoing work connects with my thesis on flow-based program optimization.
+
+          **Ocelot: Opportunistically Exploiting Parallelism in Python Agentic Workflows**
+
+          Stephen Mell, David Mell, **Harry Y. H. Li**, Zhihao Jia, Konstantinos Kallas, Steve Zdancewic, and Osbert Bastani
+
+          _Submitted to ASPLOS 2027 (under review)_
         `}</EntryDescription>
       </Entry>
       <Entry>
