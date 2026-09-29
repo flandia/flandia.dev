@@ -479,6 +479,16 @@ const Body = () => (
     <Section>
       <SectionTitle>Other Experiences</SectionTitle>
       <Entry>
+        <EntryTitle>Student Representative</EntryTitle>
+        <EntrySubtitle>
+          Hall Affairs and Operations Committee (HAOC), HKUST
+        </EntrySubtitle>
+        <EntryTime>2026-27 Residential Year</EntryTime>
+        <EntryDescription>{md`
+          Nominated by [Prof. Cindy Li](https://cse.hkust.edu.hk/~lixin/), I am serving as a student representative on the [Hall Affairs and Operations Committee](https://shrl.hkust.edu.hk/about/governance/hall-affairs-and-operations-committee), contributing a student perspective to the review of hall-residence appeals and the interpretation of hall rules.
+        `}</EntryDescription>
+      </Entry>
+      <Entry>
         <EntryTitle>Artifact Evaluation Committee</EntryTitle>
         <EntrySubtitle>ICFP 2026, Indianapolis, IN, USA</EntrySubtitle>
         <EntryTime>2026</EntryTime>
@@ -488,13 +498,16 @@ const Body = () => (
       </Entry>
       <Entry>
         <EntryTitle>AI Literacy Initiative Workshop</EntryTitle>
-        <EntrySubtitle>i-Village, HKUST</EntrySubtitle>
-        <EntryTime>2025-26 Summer (in preparation)</EntryTime>
+        <EntrySubtitle>Hall X, HKUST</EntrySubtitle>
+        <EntryTime>2026-27</EntryTime>
         <EntryBadges>
-          <LightBadge>Upcoming</LightBadge>
+          <LightBadge>Preparing</LightBadge>
         </EntryBadges>
         <EntryDescription>{md`
-          Led by [Prof. Cindy Li](https://cse.hkust.edu.hk/~lixin/) to join a team leading the AI Literacy Initiative targeting Year 1 students. I will lead two workshops in my areas of expertise and support several others, covering fun and practical AI topics for students' study and daily life.
+          Working with [Prof. Cindy Li](https://cse.hkust.edu.hk/~lixin/) and fellow students on AI literacy for Hall X residents, including first-year students. I am developing two beginner-friendly, 90-minute workshops combining live demonstrations and hands-on activities.
+
+          - **Introduction to AI and Agents: A Practical Starter Kit**. A structured introduction to AI providers, models, chatbots, and agents, with practice in specifying tasks, supplying context, and checking responses. Participants will leave with a reusable prompting template and verification checklist.
+          - **Everyday Agentic Workflows: From Chatting to Getting Things Done**. A practical introduction to using agents for multi-step student tasks, with clear inputs, outputs, permissions, and review points. A guided workflow will cover gathering information, preparing documents, protecting personal information, and reviewing consequential actions. No programming background is required.
         `}</EntryDescription>
       </Entry>
       <Entry>
