@@ -25,7 +25,7 @@ export const SubEntry = ({ children }: PropsWithChildren) =>
     const { children: descriptionChildren, ...descriptionProps } =
       description ?? {};
     return (
-      <Card>
+      <Card className="bg-transparent">
         <CardHeader>
           <div className="grid grid-cols-[minmax(0,1fr)_fit-content(40%)] items-start gap-x-3 text-base">
             <h4 className="inline-flex min-w-0 flex-wrap items-center gap-2 text-sm leading-snug font-semibold text-foreground/85">

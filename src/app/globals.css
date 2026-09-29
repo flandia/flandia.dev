@@ -137,6 +137,25 @@
   @apply mt-1;
 }
 
+.expandable-card :where(a, a *, button, button *) {
+  cursor: pointer;
+}
+
+/* Extend the highlight without changing entry spacing or text alignment. */
+.expandable-entry {
+  @apply relative isolate bg-card;
+}
+
+.expandable-entry::before {
+  content: "";
+  @apply pointer-events-none absolute -inset-2 -z-10 rounded-lg bg-muted/50 opacity-0 transition-opacity duration-300 ease-out motion-reduce:transition-none print:hidden;
+}
+
+.expandable-entry:hover::before,
+.expandable-entry:has(:focus-visible)::before {
+  opacity: 1;
+}
+
 .entry-details-content {
   --prose-font-size: var(--text-xs);
   --prose-line-height: var(--text-xs--line-height);
@@ -189,7 +208,9 @@
       var(--project-columns)
   );
   flex-shrink: 0;
-  transition: width 280ms ease;
+  transition:
+    width 280ms ease,
+    background-color 300ms ease-out;
 }
 
 .project-card-slot[data-expanded="true"] > .project-card {

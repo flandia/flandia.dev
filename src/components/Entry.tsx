@@ -1,9 +1,10 @@
 import { PropsWithChildren } from "react";
 
 import { Badges } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { CardContent, CardHeader } from "@/components/ui/card";
 import {
   ExpandableDetails,
+  ExpandableDetailsCard,
   ExpandableDetailsContent,
   ExpandableDetailsTrigger,
 } from "@/components/ui/expandable-details";
@@ -44,15 +45,22 @@ export const Entry = ({ children }: PropsWithChildren) =>
     );
 
     const content = (
-      <Card className="break-inside-avoid">
+      <ExpandableDetailsCard
+        className={
+          details ? "expandable-entry break-inside-avoid" : "break-inside-avoid"
+        }
+      >
         <CardHeader>
           {details ? (
-            <h3 className="text-base leading-snug">
-              <ExpandableDetailsTrigger className="grid w-[calc(100%+0.5rem)] grid-cols-[minmax(0,1fr)_fit-content(40%)_auto] items-start gap-x-1 [&>span:first-child]:mr-2 hover:[&>span:first-child]:underline focus-visible:[&>span:first-child]:underline">
-                {titleContent}
+            <div className="text-base leading-snug">
+              <div className="-m-1 grid w-[calc(100%+0.5rem)] grid-cols-[minmax(0,1fr)_fit-content(40%)_auto] items-start gap-x-1 p-1">
+                <h3 className="mr-2 leading-snug">{titleContent}</h3>
                 {timeContent}
-              </ExpandableDetailsTrigger>
-            </h3>
+                <ExpandableDetailsTrigger className="self-center">
+                  <span className="sr-only">{titleChildren} details</span>
+                </ExpandableDetailsTrigger>
+              </div>
+            </div>
           ) : (
             <div className="grid grid-cols-[minmax(0,1fr)_fit-content(40%)] items-start gap-x-3 text-base">
               <h3 className="leading-snug">{titleContent}</h3>
@@ -77,7 +85,7 @@ export const Entry = ({ children }: PropsWithChildren) =>
             </CardContent>
           </ExpandableDetailsContent>
         ) : null}
-      </Card>
+      </ExpandableDetailsCard>
     );
 
     return details ? <ExpandableDetails>{content}</ExpandableDetails> : content;

@@ -348,12 +348,11 @@ const Body = () => (
           COMP 4981H · Project LP4. Advised by [Prof. Lionel Parreaux](https://lptk.github.io/about.html).
 
           I'm exploring flow analysis for program optimization in MLscript. My current focus is tracking effects and mutable accesses so that optimizations preserve program behavior.
-        `}</EntryDescription>
-        <EntryDetails>{md`
+
           The prototype tracks whether a function may raise an effect. Next, I plan to track mutable reads and use this information to make transformations such as eta expansion safe.
 
           Other directions I'm considering include reusable analysis results, constructor/destructor analysis, deforestation, and dead-code elimination.
-        `}</EntryDetails>
+        `}</EntryDescription>
       </Entry>
       <Entry>
         <EntryTitle>Research Collaboration</EntryTitle>

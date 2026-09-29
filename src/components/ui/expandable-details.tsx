@@ -7,6 +7,7 @@ import {
   PropsWithChildren,
   use,
   useId,
+  useRef,
   useState,
 } from "react";
 
@@ -69,7 +70,7 @@ export function ExpandableDetailsTrigger({
       aria-controls={panelId}
       onClick={toggle}
       className={cn(
-        "group -m-1 inline-flex cursor-pointer touch-manipulation items-center gap-1 rounded-sm p-1 text-left transition-colors hover:bg-muted/50 focus-visible:bg-muted/50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring motion-reduce:transition-none",
+        "group -m-1 inline-flex cursor-pointer touch-manipulation items-center gap-1 rounded-sm p-1 text-left transition-colors select-text hover:bg-muted/50 focus-visible:bg-muted/50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring motion-reduce:transition-none",
         className,
       )}
     >
@@ -107,6 +108,92 @@ export function ExpandableDetailsContent({ children }: PropsWithChildren) {
   );
 }
 
+// Use rendered text bounds rather than block bounds: paragraphs and headings
+// also contain blank space that should remain clickable.
+function hitsText(element: Element, x: number, y: number) {
+  const walker = element.ownerDocument.createTreeWalker(
+    element,
+    NodeFilter.SHOW_TEXT,
+  );
+  const range = element.ownerDocument.createRange();
+  let node;
+  while ((node = walker.nextNode())) {
+    if (!node.textContent?.trim()) continue;
+    range.selectNodeContents(node);
+    for (const rect of range.getClientRects()) {
+      if (
+        x >= rect.left &&
+        x <= rect.right &&
+        y >= rect.top &&
+        y <= rect.bottom
+      )
+        return true;
+    }
+  }
+  return false;
+}
+
+// Text is reserved for selection. Only whitespace and the dedicated
+// disclosure button toggle the card; links retain their normal behavior.
+export function ExpandableDetailsCard({
+  className,
+  ...props
+}: ComponentPropsWithoutRef<typeof Card>) {
+  const details = use(DetailsContext);
+  const pointerStart = useRef<{ x: number; y: number } | null>(null);
+
+  return (
+    <Card
+      {...props}
+      className={cn(
+        details &&
+          "expandable-card cursor-pointer transition-colors duration-300 ease-out select-text hover:bg-muted/50 has-[:focus-visible]:bg-muted/50 motion-reduce:transition-none print:!bg-card",
+        className,
+      )}
+      onPointerDownCapture={(event) => {
+        pointerStart.current = { x: event.clientX, y: event.clientY };
+      }}
+      onPointerMove={(event) => {
+        if (!details || !(event.target instanceof Element)) return;
+        event.currentTarget.style.cursor = hitsText(
+          event.target,
+          event.clientX,
+          event.clientY,
+        )
+          ? "text"
+          : "pointer";
+      }}
+      onPointerLeave={(event) => {
+        event.currentTarget.style.removeProperty("cursor");
+      }}
+      onClick={(event) => {
+        const start = pointerStart.current;
+        pointerStart.current = null;
+        if (!details || event.defaultPrevented) return;
+        const target = event.target;
+        if (
+          !(target instanceof Element) ||
+          target.closest(
+            "a, button, input, textarea, select, summary, [role='button'], [role='link'], [contenteditable]:not([contenteditable='false'])",
+          )
+        )
+          return;
+        const dragged =
+          start &&
+          Math.hypot(event.clientX - start.x, event.clientY - start.y) > 4;
+        if (
+          dragged ||
+          event.detail > 1 ||
+          window.getSelection()?.isCollapsed === false ||
+          hitsText(target, event.clientX, event.clientY)
+        )
+          return;
+        details.toggle();
+      }}
+    />
+  );
+}
+
 export function ProjectCardFrame({
   children,
   className,
@@ -125,9 +212,12 @@ export function ProjectCardFrame({
       data-expanded={details?.open ?? false}
       data-project-id={position?.id}
     >
-      <Card {...props} className={cn("project-card min-w-0", className)}>
+      <ExpandableDetailsCard
+        {...props}
+        className={cn("project-card min-w-0", className)}
+      >
         {children}
-      </Card>
+      </ExpandableDetailsCard>
     </div>
   );
 }
