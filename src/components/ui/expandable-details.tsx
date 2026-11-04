@@ -70,7 +70,7 @@ export function ExpandableDetailsTrigger({
       aria-controls={panelId}
       onClick={toggle}
       className={cn(
-        "group -m-1 inline-flex cursor-pointer touch-manipulation items-center gap-1 rounded-sm p-1 text-left transition-colors select-text hover:bg-muted/50 focus-visible:bg-muted/50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring motion-reduce:transition-none",
+        "group m-0 inline-flex min-h-11 min-w-11 cursor-pointer touch-manipulation items-center justify-center gap-1 rounded-sm p-1 text-left transition-colors select-text hover:bg-muted/50 focus-visible:bg-muted/50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring motion-reduce:transition-none sm:-m-1 sm:min-h-7 sm:min-w-7 print:hidden",
         className,
       )}
     >

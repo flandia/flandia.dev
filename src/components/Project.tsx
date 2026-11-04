@@ -77,7 +77,7 @@ export function Project({
               </a>
             </CardTitle>
             {detailsProps ? (
-              <ExpandableDetailsTrigger className="-my-1.5 size-8 shrink-0 justify-center">
+              <ExpandableDetailsTrigger className="size-8 shrink-0 justify-center sm:-my-1.5">
                 <span className="sr-only">{titleChildren} details</span>
               </ExpandableDetailsTrigger>
             ) : null}

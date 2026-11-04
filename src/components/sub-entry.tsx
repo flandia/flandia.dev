@@ -27,17 +27,19 @@ export const SubEntry = ({ children }: PropsWithChildren) =>
     return (
       <Card className="bg-transparent">
         <CardHeader>
-          <div className="grid grid-cols-[minmax(0,1fr)_fit-content(40%)] items-start gap-x-3 text-base">
+          <div className="entry-heading entry-heading-static grid grid-cols-[minmax(0,1fr)_fit-content(40%)] items-start gap-x-3 text-base">
             <h4 className="inline-flex min-w-0 flex-wrap items-center gap-2 text-sm leading-snug font-semibold text-foreground/85">
               <span {...titleProps}>{titleChildren}</span>
               <Badges {...badgesProps}>{badgesChildren}</Badges>
             </h4>
-            <div
-              className="shrink-0 text-right text-sm leading-snug text-muted-foreground tabular-nums"
-              {...timeProps}
-            >
-              {timeChildren}
-            </div>
+            {time ? (
+              <div
+                className="entry-time shrink-0 text-right text-sm leading-snug text-muted-foreground tabular-nums"
+                {...timeProps}
+              >
+                {timeChildren}
+              </div>
+            ) : null}
           </div>
           {subtitle && (
             <p className="body-copy" {...subtitleProps}>

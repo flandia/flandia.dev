@@ -32,8 +32,6 @@ const Body = () => (
     <Section>
       <SectionTitle>About</SectionTitle>
       <SectionText>{md`
-        I am Yu Hong Harry Li and I go by Harry; I also go by Flandia online.
-
         I'm interested in a broad range of topics in computer science. My research interests focus on TCS B, particularly programming languages, as well as software engineering and systems. I also have experience in full-stack software engineering, data mining, analysis, and visualization.
       `}</SectionText>
     </Section>

@@ -9,7 +9,7 @@
     "es6": true,
     "node": true
   },
-  "ignorePatterns": [".next/**", "node_modules/**"],
+  "ignorePatterns": [".next/**", "node_modules/**", ".agents/**"],
   "plugins": ["import", "jsx-a11y", "nextjs", "react", "typescript"],
   "settings": {
     "next": {

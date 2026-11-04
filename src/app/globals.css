@@ -81,6 +81,8 @@
     --ring: 224 71.4% 4.1%;
 
     --radius: 0.5rem;
+    --detail-font-size: 0.8125rem;
+    --detail-line-height: 1.6;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -121,7 +123,7 @@
 @utility body-copy {
   @apply font-mono text-sm text-pretty;
   font-size: var(--prose-font-size, var(--text-sm));
-  line-height: var(--prose-line-height, var(--text-sm--line-height));
+  line-height: var(--prose-line-height, 1.6);
 }
 
 .prose-content {
@@ -157,8 +159,8 @@
 }
 
 .entry-details-content {
-  --prose-font-size: var(--text-xs);
-  --prose-line-height: var(--text-xs--line-height);
+  --prose-font-size: var(--detail-font-size);
+  --prose-line-height: var(--detail-line-height);
   display: grid;
   grid-template-rows: 0fr;
   opacity: 0;
@@ -217,6 +219,34 @@
   width: 100cqw;
 }
 
+/* Dates keep their own line on phones instead of squeezing long titles. */
+@media screen and (width < 40rem) {
+  :root {
+    --detail-font-size: 0.875rem;
+  }
+
+  .entry-heading {
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 0.5rem;
+    row-gap: 0.25rem;
+  }
+
+  .entry-heading-static {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .entry-time {
+    grid-column: 1;
+    grid-row: 2;
+    text-align: left;
+  }
+
+  .entry-toggle {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+}
+
 @media (min-width: 48rem) {
   .project-cards {
     --project-columns: 2;
@@ -238,6 +268,12 @@
   html {
     font-size: 10pt;
     print-color-adjust: exact !important;
+  }
+
+  :root {
+    --detail-font-size: var(--text-xs);
+    --detail-line-height: var(--text-xs--line-height);
+    --prose-line-height: var(--text-sm--line-height);
   }
 
   main {

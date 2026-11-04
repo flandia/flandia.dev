@@ -63,7 +63,7 @@ function CardContent({
     <div
       ref={ref}
       className={cn(
-        "text-muted-foreground [--prose-font-size:var(--text-xs)] [--prose-line-height:var(--text-xs--line-height)]",
+        "text-muted-foreground [--prose-font-size:var(--detail-font-size)] [--prose-line-height:var(--detail-line-height)]",
         className,
       )}
       {...props}

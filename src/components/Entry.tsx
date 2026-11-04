@@ -38,11 +38,11 @@ export const Entry = ({ children }: PropsWithChildren) =>
         <Badges {...badgesProps}>{badgesChildren}</Badges>
       </span>
     );
-    const timeContent = (
-      <span className="text-right text-sm leading-snug font-normal text-muted-foreground tabular-nums">
+    const timeContent = time ? (
+      <span className="entry-time text-right text-sm leading-snug font-normal text-muted-foreground tabular-nums">
         <span {...timeProps}>{timeChildren}</span>
       </span>
-    );
+    ) : null;
 
     const content = (
       <ExpandableDetailsCard
@@ -53,17 +53,21 @@ export const Entry = ({ children }: PropsWithChildren) =>
         <CardHeader>
           {details ? (
             <div className="text-base leading-snug">
-              <div className="-m-1 grid w-[calc(100%+0.5rem)] grid-cols-[minmax(0,1fr)_fit-content(40%)_auto] items-start gap-x-1 p-1">
-                <h3 className="mr-2 leading-snug">{titleContent}</h3>
+              <div className="entry-heading -m-1 grid w-[calc(100%+0.5rem)] grid-cols-[minmax(0,1fr)_fit-content(40%)_auto] items-start gap-x-1 p-1">
+                <h3 className="mr-2 min-w-0 leading-snug wrap-break-word">
+                  {titleContent}
+                </h3>
                 {timeContent}
-                <ExpandableDetailsTrigger className="self-center">
+                <ExpandableDetailsTrigger className="entry-toggle self-center">
                   <span className="sr-only">{titleChildren} details</span>
                 </ExpandableDetailsTrigger>
               </div>
             </div>
           ) : (
-            <div className="grid grid-cols-[minmax(0,1fr)_fit-content(40%)] items-start gap-x-3 text-base">
-              <h3 className="leading-snug">{titleContent}</h3>
+            <div className="entry-heading entry-heading-static grid grid-cols-[minmax(0,1fr)_fit-content(40%)] items-start gap-x-3 text-base">
+              <h3 className="min-w-0 leading-snug wrap-break-word">
+                {titleContent}
+              </h3>
               {timeContent}
             </div>
           )}

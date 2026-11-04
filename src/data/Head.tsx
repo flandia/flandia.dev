@@ -47,6 +47,9 @@ type SocialProps = {
 
 const Social = (props: SocialProps) => {
   const { url, icon } = props;
+  const label = props.printHidden
+    ? props.label
+    : `${props.labelPrefix ?? ""}${props.label}`;
 
   return (
     <>
@@ -54,12 +57,9 @@ const Social = (props: SocialProps) => {
         href={url}
         rel="noreferrer"
         target="_blank"
-        aria-label={
-          props.printHidden
-            ? props.label
-            : `${props.labelPrefix ?? ""}${props.label}`
-        }
-        className="inline-flex size-8 items-center justify-center rounded-md border border-input bg-background text-sm font-medium whitespace-nowrap ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-hidden print:hidden"
+        aria-label={label}
+        title={label}
+        className="inline-flex size-11 items-center justify-center rounded-md border border-input bg-background text-sm font-medium whitespace-nowrap ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-hidden sm:size-9 print:hidden"
       >
         <span aria-hidden="true">
           {createElement(icon, { className: "h-4 w-4" })}
@@ -76,7 +76,7 @@ const Social = (props: SocialProps) => {
 };
 
 const Socials = ({ children }: PropsWithChildren) => (
-  <div className="flex flex-row flex-wrap gap-1 pt-1 body-copy text-muted-foreground">
+  <div className="flex flex-row flex-wrap gap-2 pt-1 body-copy text-muted-foreground sm:gap-1.5">
     {children}
   </div>
 );
