@@ -232,11 +232,11 @@
 @media print {
   @page {
     size: A4;
-    margin: 1in;
+    margin: 0.75in;
   }
 
   html {
-    font-size: 9pt;
+    font-size: 10pt;
     print-color-adjust: exact !important;
   }
 
