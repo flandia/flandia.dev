@@ -259,7 +259,7 @@
   }
 
   .project-cards {
-    --project-columns: 3;
+    --project-columns: 1;
     --project-gap: 0.5rem;
   }
 

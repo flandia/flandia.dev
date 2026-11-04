@@ -46,7 +46,7 @@ const Body = () => (
         </EntrySubtitle>
         <EntryTime>2023 - 2027</EntryTime>
         <EntryDescription>{md`
-          GPA: **4.215/4.300**
+          GPA: **4.218/4.300**
           Class Rank: **1/170**
         `}</EntryDescription>
         <EntryDetails>
@@ -57,7 +57,8 @@ const Body = () => (
             Major GPA: 4.216/4.300
             Class Rank: 1/170
 
-            Earned A+ grades in **all** Computer Science courses.
+            Got A+ in **all** Computer Science courses.
+            Got 1st in **more than half** of the Computer Science courses.
           `}
           <SubEntry>
             <SubEntryTitle>COMP 4021 Internet Computing</SubEntryTitle>
@@ -347,11 +348,11 @@ const Body = () => (
         <EntryDescription>{md`
           COMP 4981H · Project LP4. Advised by [Prof. Lionel Parreaux](https://lptk.github.io/about.html).
 
-          I'm exploring flow analysis for program optimization in MLscript. My current focus is tracking effects and mutable accesses so that optimizations preserve program behavior.
+          I'm investigating how reusable flow analysis can support program optimizations that preserve behavior in MLscript, TACO Lab's experimental programming language. The project uses flow webs to group related producers and consumers, such as functions and their call sites, so that transformations can update them together.
 
-          The prototype tracks whether a function may raise an effect. Next, I plan to track mutable reads and use this information to make transformations such as eta expansion safe.
+          Eta expansion can move a computation into a lambda, changing when or how often it runs, including when it mutates or observes a state. I implemented an effect-analysis prototype and integrated it into the existing eta-expansion optimization, avoiding transformations that may move observable effects or state mutations and observations. The analysis propagates effects through calls, including recursive calls and calls to imported functions.
 
-          Other directions I'm considering include reusable analysis results, constructor/destructor analysis, deforestation, and dead-code elimination.
+          Other directions I'm considering include storing reusable analysis results in symbols, extending flow webs to constructors and destructors, preserving web relationships during deforestation, generalizing dead-parameter elimination to dead-everything elimination, and investigating further transformations such as defunctionalization.
         `}</EntryDescription>
       </Entry>
       <Entry>
@@ -362,17 +363,19 @@ const Body = () => (
           <LightBadge>Ongoing</LightBadge>
         </EntryBadges>
         <EntryDescription>{md`
-          I work on PopPy, a compiler for parallelizing Python agentic programs, at the University of Pennsylvania with [Prof. Osbert Bastani](https://obastani.github.io/) and [Dr. Stephen Mell](https://mell.ac/). I joined the collaboration in Spring 2026 and also took part in a summer research internship. PopPy is named Ocelot in the manuscript below.
+          I work on PopPy, a compiler for parallelizing Python agentic programs, at the University of Pennsylvania with [Prof. Osbert Bastani](https://obastani.github.io/) and [Dr. Stephen Mell](https://mell.ac/). I joined the collaboration in Spring 2026 and also took part in a summer research internship.
 
           I extended Bezoar, PopPy's intermediate language, with control transfer statements (early \`return\`, \`break\`, and \`continue\`) and a general \`for\`/\`while\` loop construct. I formalized the extension's syntax, semantics, and lowering to core Bezoar.
 
+          I also worked on control-flow transformations, iterator sequencing, and memory scheduling, and adapted agent-workflow benchmarks for evaluation.
+
           I'm designing a unified effect system to broaden PopPy's support for effects such as object mutation and I/O. This ongoing work connects with my thesis on flow-based program optimization.
 
-          **Ocelot: Opportunistically Exploiting Parallelism in Python Agentic Workflows**
+          **[PopPy: Opportunistically Exploiting Parallelism in Python Agentic Workflows](https://arxiv.org/abs/2605.18697)**
 
           Stephen Mell, David Mell, **Harry Y. H. Li**, Zhihao Jia, Konstantinos Kallas, Steve Zdancewic, and Osbert Bastani
 
-          _Submitted to ASPLOS 2027 (under review)_
+          _arXiv preprint and submitted to ASPLOS 2027 (under review)_
         `}</EntryDescription>
       </Entry>
       <Entry>
@@ -382,12 +385,13 @@ const Body = () => (
         </EntrySubtitle>
         <EntryTime>2024-25 Fall, Spring, Summer. 2025-26 Fall</EntryTime>
         <EntryDescription>{md`
-          Advised by [Prof. Lionel Parreaux](https://lptk.github.io/about.html), I worked on _MLscript_, our lab's programming language and compiler:
+          Advised by [Prof. Lionel Parreaux](https://lptk.github.io/about.html), I investigated how to support ad hoc polymorphism in _MLscript_, our lab's experimental programming language, while keeping compilation independent of full type inference. The challenge was to recover enough information at each use site to select the intended definition and supply implicit arguments.
 
-          - **Module system:** worked on a minimal module system to support ad hoc polymorphism and explored a type-theoretic formalization.
-          - **Type classes:** implemented module-based type classes, keeping compilation separate from type checking and inference.
-          - **Resolution pass:** developed a compiler pass to resolve references, selections, and applications without type checking, supporting modules and type classes.
-          - **Control-flow analysis:** explored how values flow through a program, with the longer-term goal of relaxing module restrictions and supporting ad hoc polymorphism.
+          - **Module System.** I first implemented a restricted module-based approach that kept callable declarations known at compile time. Checks on module-valued parameters, return values, and bindings preserved the information needed to insert implicit arguments as modules passed through a program. I also developed formal module-checking rules to describe these restrictions.
+          - **Resolution Pass.** Forward references and chained member accesses could require declarations that elaboration had not yet processed. I developed a separate pass after elaboration, combining symbol resolution with lightweight type facts from annotations, literals, constructors, and known members. It also disambiguates overloaded names, such as a class and companion module sharing a name, and preserves the selected definition through lowering and JavaScript generation.
+          - **Type Classes and Contextual Parameters.** Building on this information, I implemented lookup and insertion of matching instances from lexical scope, letting functions receive implementations implicitly. I added constructor support, explicit contextual arguments, and instance retrieval with \`use[T]\`. Alongside the implementation, I formalized the translation into explicit calls and explored a declarative algorithm for interacting instance requirements; the general algorithm remained unimplemented.
+          - **Multiple Parameter Lists and Eta Expansion.** To support ordinary and contextual arguments together, I added multiple parameter lists across parsing, elaboration, and code generation, enabling partial application. I then implemented eta expansion so functions with interleaved parameter lists could be used as values with implicit arguments supplied, and refined it to avoid redundant expansion inside application chains.
+          - **Control-Flow Analysis.** The module-based approach restricted how values could be passed around. I explored using flows from producers to consumers to recover information beyond local annotations and prototyped basic implicit-argument resolution on this basis. I found simple **0-CFA** sufficient for the intended ad hoc-polymorphism use cases in MLscript. This investigation led to my undergraduate thesis on using flow information for program optimization.
         `}</EntryDescription>
       </Entry>
       <Entry>
@@ -407,6 +411,19 @@ const Body = () => (
       <SectionTitle>Work Experiences</SectionTitle>
       <Entry>
         <EntryTitle>Independent Work Project</EntryTitle>
+        <EntrySubtitle>
+          Intelligent Feedback and Style Coach for Programmers
+        </EntrySubtitle>
+        <EntryTime>2026-27 Fall</EntryTime>
+        <EntryDescription>{md`
+          Advised by [Prof. Desmond Tsoi](https://www.cse.ust.hk/~desmond/).
+
+          - Developed a TypeScript VS Code extension and [browser prototype](https://fsc.flandia.dev) that gives novice Python programmers code-local feedback on correctness, clarity, and performance, with explanations and student-controlled edit previews.
+          - Evaluated the prototype on a development benchmark of 450 course-derived and multi-issue inputs with paired controls, using LLM adjudication to assess feedback.
+        `}</EntryDescription>
+      </Entry>
+      <Entry>
+        <EntryTitle>Independent Work Project</EntryTitle>
         <EntrySubtitle>CRS Request System</EntrySubtitle>
         <EntryTime>2025-26 Fall, Winter</EntryTime>
         <EntryDescription>{md`
@@ -414,6 +431,7 @@ const Body = () => (
 
           - Built student and instructor workflows for class swaps, absences, and assignment deadline extensions.
           - Designed the application with TypeScript, Zod, tRPC, MongoDB, and React/Next.js.
+          - Mentored subsequent contributors as the project continued to develop.
 
           [Project repository](https://github.com/HKUST-CRS/crs).
         `}</EntryDescription>
@@ -498,7 +516,7 @@ const Body = () => (
         <EntrySubtitle>ICFP 2026, Indianapolis, IN, USA</EntrySubtitle>
         <EntryTime>2026</EntryTime>
         <EntryDescription>{md`
-          Serving on the [ICFP 2026 Artifact Evaluation Committee](https://icfp26.sigplan.org/committee/icfp-2026-artifact-evaluation-organization-committee) (co-chaired by [Son Ho](https://www.sonho.fr/) and [Prof. Lionel Parreaux](https://lptk.github.io/about.html)), reviewing artifacts submitted to the International Conference on Functional Programming.
+          Served on the [ICFP 2026 Artifact Evaluation Committee](https://icfp26.sigplan.org/committee/icfp-2026-artifact-evaluation-organization-committee) (co-chaired by [Son Ho](https://www.sonho.fr/) and [Prof. Lionel Parreaux](https://lptk.github.io/about.html)), reviewing artifacts submitted to the International Conference on Functional Programming.
         `}</EntryDescription>
       </Entry>
       <Entry>
@@ -594,7 +612,7 @@ const Body = () => (
         </EntryDescription>
       </Entry>
     </Section>
-    <Section hiddenPrint>
+    <Section>
       <SectionTitle>Projects</SectionTitle>
       <ProjectCards>
         <Project href="https://ust-rankings.com">
@@ -619,7 +637,7 @@ const Body = () => (
           </ProjectBadges>
           <ProjectLabel>ust-rankings.com</ProjectLabel>
         </Project>
-        <Project href="https://arkwaifu.cc">
+        <Project href="https://arkwaifu.cc" hiddenPrint>
           <ProjectTitle>Arkwaifu</ProjectTitle>
           <ProjectDescription>{md`
             An Arknights artwork and story archive with browsing, search, and automated updates across game regions.
@@ -640,7 +658,7 @@ const Body = () => (
           </ProjectBadges>
           <ProjectLabel>arkwaifu.cc</ProjectLabel>
         </Project>
-        <Project href="https://flandia.dev">
+        <Project href="https://flandia.dev" hiddenPrint>
           <ProjectTitle>the Home Page</ProjectTitle>
           <ProjectDescription>
             My personal website and portfolio, covering research, projects,
@@ -659,7 +677,7 @@ const Body = () => (
           </ProjectBadges>
           <ProjectLabel>flandia.dev</ProjectLabel>
         </Project>
-        <Project href="https://github.com/HKUST-CRS/crs">
+        <Project href="https://github.com/HKUST-CRS/crs" hiddenPrint>
           <ProjectTitle>CRS Request System</ProjectTitle>
           <ProjectDescription>
             A platform for students and instructors to manage class swaps,
@@ -680,7 +698,7 @@ const Body = () => (
           </ProjectBadges>
           <ProjectLabel>github.com/HKUST-CRS/crs</ProjectLabel>
         </Project>
-        <Project href="https://github.com/flandia/from-do">
+        <Project href="https://github.com/flandia/from-do" hiddenPrint>
           <ProjectTitle>From Do</ProjectTitle>
           <ProjectDescription>
             An experimental to-do language and VS Code extension, with a
