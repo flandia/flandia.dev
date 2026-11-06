@@ -635,7 +635,7 @@ const Body = () => (
           </ProjectBadges>
           <ProjectLabel>ust-rankings.com</ProjectLabel>
         </Project>
-        <Project href="https://arkwaifu.cc" hiddenPrint>
+        <Project href="https://arkwaifu.cc">
           <ProjectTitle>Arkwaifu</ProjectTitle>
           <ProjectDescription>{md`
             An Arknights artwork and story archive with browsing, search, and automated updates across game regions.
@@ -696,7 +696,7 @@ const Body = () => (
           </ProjectBadges>
           <ProjectLabel>github.com/HKUST-CRS/crs</ProjectLabel>
         </Project>
-        <Project href="https://github.com/flandia/from-do" hiddenPrint>
+        <Project href="https://github.com/flandia/from-do">
           <ProjectTitle>From Do</ProjectTitle>
           <ProjectDescription>
             An experimental to-do language and VS Code extension, with a
